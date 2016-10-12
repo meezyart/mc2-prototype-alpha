@@ -1,0 +1,70 @@
+{{ include( 'layout/header.twig' ) }}
+<div>
+    <form action="#" method="post" name="profileForm" id="mc2-form">
+        <!-- id, name, value, type, size, placeholder -->
+        <h2>Gaurdian's Information</h2>
+        {% import 'macros/forms.twig' as forms %}
+        {{ forms.input( '', 'uid', user.uid, 'hidden', '', '' ) }}
+        {{ forms.input( '', 'action', 'guardians', 'hidden', '', '' ) }}
+        <label for="first-name">First Name</label>
+        {{ forms.input( 'first-name', 'firstName', '', 'text', 50, 'First Name' ) }}
+
+        <label for="last-name">Last Name</label>
+        {{ forms.input( 'last-name', 'lastName', '', 'text', 50, 'Last Name' ) }}
+
+        <div class="hr"></div>
+
+        <label for="age">Age</label>
+        {{ forms.input( 'age', 'age', '', 'number', 5, '25' ) }}
+
+        <div class="hr"></div>
+        {% set g_value = [ 'Male', 'Female' ] %}
+        {% set g_id = [ 'male', 'female' ]  %}
+        <div class="label">Gender</div>
+        {{ forms.radio( g_id, 'gender', g_value ) }}
+
+        <div class="hr"></div>
+
+        <label for="education">Education</label>
+        {{ forms.input( 'education', 'education', '', 'text', 50, 'Education' ) }}
+
+        <div class="hr"></div>
+
+        <!-- id, name, value, opt -->
+        <label for="profession">Profession</label>
+        {# These are a quick list I put together. #}
+        {# We may want to hit an api or store in DB for better dataset of professions #}
+        {%  set prof_list = ['--Please Select--', 'Web', 'Software', 'Finance', 'Business', 'Medical'] %}
+        {%  set val_list = ['none', 'Web', 'Software', 'Finance', 'Business', 'Medical'] %}
+        {{ forms.dropdown( 'profession', 'profession', val_list, prof_list  )  }}
+
+        <div class="hr"></div>
+
+        <label for="lang">Languages</label>
+        {{ forms.input( 'lang', 'languages', '', 'text', 50, 'Languages' ) }}
+
+        <dir class="hr"></dir>
+        {% set m_value = [ 'Married', 'Single', 'Widowed', 'Divorced' ] %}
+        {% set m_id = [ 'm-status', 's-status', 'w-status', 'd-status' ] %}
+        <div class="label">Marital Status</div>
+        <!-- id, group, value -->
+        {{ forms.radio( m_id, 'maritalStatus', m_value ) }}
+
+        <div class="hr"></div>
+
+        <label for="religion">Religion</label>
+        {{ forms.input( 'religion', 'religion', '', 'text', 20, 'Religion' ) }}
+
+        <div class="hr"></div>
+        {% set h_value = [ 'Yes', 'No' ] %}
+        {% set h_id = [ 'yes', 'no' ] %}
+        <div class="label">Would you like to be a host?</div>
+        {{ forms.radio( h_id, 'host', h_value ) }}
+        <div class="hr"></div>
+        {{ forms.input( 'submit-profile', '', 'Submit', 'submit', '', '' ) }}
+    </form>
+</div>
+{{ include( 'layout/footer.twig' ) }}
+
+
+

@@ -1,0 +1,34 @@
+{{ include( 'layout/header.twig' ) }}
+<!-- Simple login page. Idea here is to use a tabbed experience -->
+{% import 'macros/forms.twig' as forms %}
+<div>
+	<div class="tab-wrap" id="login">
+		<div class="tab">
+			<h2> Login </h2>
+		</div>
+        <!-- id, name, value, type, size, placeholder -->
+		<form action="/profile.php" method="post" id="login-form" name="loginForm">
+		    {{ forms.input( 'user-name', 'userName', '', 'text', 20, 'Email Address'  ) }}
+            <div class="hr"></div>
+		    {{ forms.input( 'password', 'password', '', 'password', 20, 'Password' ) }}
+            <div class="hr"></div>
+            {{ forms.input( 'submit-login', '', 'Submit', 'submit', '', '' ) }}
+		</form>
+	</div>
+    <span>-- or --</span>
+	<div class="tab-wrap" id="register">
+		<div class="tab">
+			<h2> Register</h2>
+		</div>
+		<form action="#" method="post" id="reg-form" name="regForm">
+			{{ forms.input( 'user-name', 'userName', '', 'text', 20, 'Email Address' ) }}
+            <div class="hr"></div>
+			{{ forms.input( 'password', 'password', '', 'password', 20, 'Password' ) }}
+            <div class="hr"></div>
+			{{ forms.input( 'pass-verify', 'passVerify', '', 'password', 20, 'Verify Password' ) }}
+            <div class="hr"></div>
+            {{ forms.input( 'submit-reg', '', 'Submit', 'submit', '', '' ) }}
+		</form>
+	</div>
+</div>
+{{ include( 'layout/footer.twig' ) }}

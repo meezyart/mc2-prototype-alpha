@@ -1,0 +1,19 @@
+{% macro input( id, name, value, type, size, placeholder ) %}
+    <input id="{{ id }}" type="{{ type|default('text') }}" name="{{ name }}" value="{{ value|e }}" size="{{ size|default(20) }}" placeholder="{{ placeholder }}" />
+{% endmacro %}
+
+{% macro dropdown( id, name, value, opt ) %}
+    <select id="{{ id }}" name="{{ name }}" >
+        {% for a in opt %}
+            <option {% if (a == value) %} selected {% endif %} value="{{ a|e }}">{{ a }}</option>
+        {% endfor %}
+    </select>
+{% endmacro %}
+
+{% macro radio( id, group, value ) %}
+	{% set count = 0 %}
+	{% for key, a in value %}
+		<input id="{{ attribute( id , key ) }}" type="radio" name="{{ group }}" value="{{ a|e }}">
+		<label for="{{ attribute( id, key ) }}">{{ a }}</label><br />
+	{% endfor %}
+{% endmacro %}

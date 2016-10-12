@@ -1,0 +1,11 @@
+{
+    "require": {
+        "twig/twig": "^1.26",
+        "eelkevdbos/firebase-php": "dev-master"
+    },
+    "autoload": {
+    	"psr-4": {
+      		"MC\\":"public/Controllers"
+    	}
+  	}
+}
