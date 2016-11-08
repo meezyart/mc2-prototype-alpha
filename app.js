@@ -1,1 +1,1 @@
-require('./style.scss');
+require('./styles/sass/style.sass');
