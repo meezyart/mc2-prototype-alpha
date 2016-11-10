@@ -81,7 +81,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  margin: 0; }\n\n.nav {\n  box-shadow: 0px -11px 7px 9px #b1b1b1;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  background: #ffffff;\n  margin-bottom: 1em;\n  padding: 0.5em 0;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex;\n  overflow: auto; }\n  .nav--button {\n    padding: 0 1em; }\n\n.application-container {\n  overflow-x: hidden;\n  max-width: 420px;\n  margin: 0 auto; }\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0; }\n\n.nav {\n  box-shadow: 0px -11px 7px 9px #b1b1b1;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  background: #ffffff;\n  margin-bottom: 1px;\n  padding-top: 0.5em;\n  position: relative;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex;\n  overflow: auto;\n  z-index: 2; }\n  .nav--button {\n    padding: 0 1em; }\n\n.application-container {\n  overflow-x: hidden;\n  max-width: 420px;\n  margin: 0 auto; }\n\n.welcome-banner {\n  margin-top: -1px; }\n", ""]);
 
 	// exports
 
