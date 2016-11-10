@@ -20,7 +20,7 @@ module.exports = {
     loaders: [
       {
         test: /\.sass$/,
-        loaders: 'style!css!sass'
+        loader: 'style!css!sass'
       },
       {
         test: /\.s$/,
