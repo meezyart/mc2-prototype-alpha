@@ -1,4 +1,5 @@
 // var css = require("!raw!sass!./file.scss");
+// var css = require("!css!sass!/styles/sass/style.sass");
 
 module.exports = {
   entry: './app.js',
@@ -20,10 +21,11 @@ module.exports = {
     loaders: [
       {
         test: /\.sass$/,
-        loader: 'style!css!sass'
+        loaders: ["style", "css", "sass"]
       },
+      { test: /\.(png|jpg|jpeg|gif|woff)$/, loader: 'url' },
       {
-        test: /\.s$/,
+        test: /\.js$/,
         loader: 'babel',
         exclude: /node_modules$/,
         query: {

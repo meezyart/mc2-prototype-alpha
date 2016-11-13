@@ -6,18 +6,27 @@
 <body>
 
 <div class="application-container">
+  <!-- overlay-container -->
+  <div class="overlay-view"></div>
   <!-- Navigation bar -->
   <div class="nav">
+    <!-- Nav logo -->
     <div class="nav__logo nav--button"><img src="images/logo.jpg"></div>
+
+    <!-- Nav home button -->
     <div class="nav__home-btn nav--button"><img src="images/home-btn.jpg"></div>
+
+    <!-- Nav friends button -->
     <div class="nav__friends-btn nav--button">
       <img src="images/friends-btn.jpg">
-      <div class="nav__items-pending-count"></div>
+      <div class="nav__items-pending-count">10</div>
     </div>
+    <!-- Nav notifications button -->
     <div class="nav__notifications-btn nav--button">
       <img src="images/notifications-btn.jpg">
-      <div class="nav__items-pending-count"></div>
+      <div class="nav__items-pending-count is-hidden"></div>
     </div>
+    <!-- Nav additional options -->
     <div class="nav__additional-options-btn nav--button">
       <img src="images/nav-btn.jpg">
     </div>
@@ -25,9 +34,12 @@
 
   <!-- Welcome Banner -->
   <div class="welcome-banner"><img src="images/welcome-banner.jpg"></div>
-  <section class="signing-content">
-    <div class="sign-up"></div>
-    <div class="sign-in"></div>
+  <section class="welcome-container">
+    <div class="welcome-container__signing-content">
+      <div class="signing-content__sign-up signing-content--button">Sign up</div>
+      <div class="signing-content__sign-in signing-content--button">Sign in</div>
+    </div>
+    <div class="welcome-container__disclaimer">copyright 2016, My Community Classroom, All rights reserved</div>
   </section>
 </div>
 <script src="./build.js" type="text/javascript"></script>

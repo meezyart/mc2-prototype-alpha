@@ -44,7 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
 	__webpack_require__(1);
+	// require('./scripts/overlay.js');
 
 /***/ },
 /* 1 */
@@ -56,7 +59,7 @@
 	var content = __webpack_require__(2);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -81,7 +84,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  margin: 0; }\n\n.nav {\n  box-shadow: 0px -11px 7px 9px #b1b1b1;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  background: #ffffff;\n  margin-bottom: 1px;\n  padding-top: 0.5em;\n  position: relative;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex;\n  overflow: auto;\n  z-index: 2; }\n  .nav--button {\n    padding: 0 1em; }\n\n.application-container {\n  overflow-x: hidden;\n  max-width: 420px;\n  margin: 0 auto; }\n\n.welcome-banner {\n  margin-top: -1px; }\n\n.signing-content--button {\n  width: 5em;\n  height: 2em; }\n", ""]);
+	exports.push([module.id, ".something {\n  font-size: 12px; }\n\nbody {\n  background-color: #EEE;\n  font-family: chalkboard;\n  margin: 0; }\n\n.is-hidden {\n  visibility: hidden; }\n\n.nav {\n  box-shadow: 0px -11px 7px 9px #b1b1b1;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  background: #ffffff;\n  margin-bottom: 1px;\n  padding-top: 0.5em;\n  position: relative;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex;\n  overflow: auto;\n  z-index: 2; }\n  .nav--button {\n    position: relative;\n    padding: 0 1em; }\n  .nav .nav__items-pending-count {\n    background-color: #d90017;\n    border-radius: 50%;\n    text-align: center;\n    position: absolute;\n    font-weight: bold;\n    min-width: 1.1em;\n    font-size: 0.6em;\n    padding: 3px;\n    color: white;\n    right: 0.1em;\n    top: -0.5em; }\n\n.welcome-banner {\n  margin-top: -1px;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex; }\n\n.welcome-container {\n  background-color: #ffffff;\n  padding: 1em; }\n  .welcome-container__signing-content {\n    padding: 4.5em 0 6em 0;\n    display: table;\n    margin: 0 auto; }\n  .welcome-container__disclaimer {\n    color: #b1b1b1;\n    text-align: center;\n    font-size: 0.8em; }\n\n.signing-content--button {\n  background-repeat: no-repeat;\n  background-size: contain;\n  display: inline-block;\n  border-radius: 3px;\n  line-height: 2.3em;\n  text-align: center;\n  font-size: 1.3em;\n  height: 2.5em;\n  color: white;\n  width: 7em; }\n\n.signing-content__sign-up {\n  margin-right: 1em;\n  background-image: url(" + __webpack_require__(4) + "); }\n\n.signing-content__sign-in {\n  margin-left: 1em;\n  background-image: url(" + __webpack_require__(5) + "); }\n\n.application-container {\n  overflow-x: hidden;\n  position: relative;\n  max-width: 420px;\n  margin: 0 auto; }\n  .application-container .overlay-view {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 3;\n    background-color: #ffffff; }\n", ""]);
 
 	// exports
 
@@ -90,20 +93,22 @@
 /* 3 */
 /***/ function(module, exports) {
 
+	"use strict";
+
 	/*
 		MIT License http://www.opensource.org/licenses/mit-license.php
 		Author Tobias Koppers @sokra
 	*/
 	// css base code, injected by the css-loader
-	module.exports = function() {
+	module.exports = function () {
 		var list = [];
 
 		// return the list of modules as css string
 		list.toString = function toString() {
 			var result = [];
-			for(var i = 0; i < this.length; i++) {
+			for (var i = 0; i < this.length; i++) {
 				var item = this[i];
-				if(item[2]) {
+				if (item[2]) {
 					result.push("@media " + item[2] + "{" + item[1] + "}");
 				} else {
 					result.push(item[1]);
@@ -113,25 +118,23 @@
 		};
 
 		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
+		list.i = function (modules, mediaQuery) {
+			if (typeof modules === "string") modules = [[null, modules, ""]];
 			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
+			for (var i = 0; i < this.length; i++) {
 				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
+				if (typeof id === "number") alreadyImportedModules[id] = true;
 			}
-			for(i = 0; i < modules.length; i++) {
+			for (i = 0; i < modules.length; i++) {
 				var item = modules[i];
 				// skip already imported module
 				// this implementation is not 100% perfect for weird media query combinations
 				//  when a module is imported multiple times with different media queries.
 				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
+				if (typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if (mediaQuery && !item[2]) {
 						item[2] = mediaQuery;
-					} else if(mediaQuery) {
+					} else if (mediaQuery) {
 						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
 					}
 					list.push(item);
@@ -141,10 +144,20 @@
 		return list;
 	};
 
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = "data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAeAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzAxNCA3OS4xNTY3OTcsIDIwMTQvMDgvMjAtMDk6NTM6MDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE0IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYwOUQ2REFDOUY1MTExRTZCMEM3RjAzQjREMzQ1RkU0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYwOUQ2REFEOUY1MTExRTZCMEM3RjAzQjREMzQ1RkU0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODRBNzNBQzc5RjI2MTFFNkIwQzdGMDNCNEQzNDVGRTQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODRBNzNBQzg5RjI2MTFFNkIwQzdGMDNCNEQzNDVGRTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAQCwsLDAsQDAwQFw8NDxcbFBAQFBsfFxcXFxcfHhcaGhoaFx4eIyUnJSMeLy8zMy8vQEBAQEBAQEBAQEBAQEBAAREPDxETERUSEhUUERQRFBoUFhYUGiYaGhwaGiYwIx4eHh4jMCsuJycnLis1NTAwNTVAQD9AQEBAQEBAQEBAQED/wAARCAAnAHADASIAAhEBAxEB/8QAdgAAAgMBAQAAAAAAAAAAAAAAAAMBAgQFBgEAAgMBAQAAAAAAAAAAAAAAAQMCBAUABhAAAgIBAwQCAgMAAAAAAAAAAAERAgMhEhMxQVEEcSJhkYHRYhEAAgIBAwQDAAAAAAAAAAAAAAEREgIhMQNRIgQUQXET/9oADAMBAAIRAxEAPwD1lm25erfciSHaULdxFh0DpQCeQtXIGToGWar17i72T+BOTPut+F0KPMMSFZM00jr+izYmtorHch5BqRVyz1HSAnkL1ekslUjdDUvJYVvJ3hqC6GEptOU4aFbyd50HXQqSLfZfnsToQ5MtrJGtKE7mupNsuyjs+y0Lurh6ScXLnyWyW3Sob+vgbxy9xeeSSNTzG71/VWxXyp7nrtfY5XoK2b2qJaKv3fwjuuwOXmq4RWyYrJSFNf0IdmzU2KvVWcsnweSm4ZU5U0pKV01t18FuQrfpJneSGaeCTUoo5czT1NXIHIZeUOUlQHsLqbOQOQx8xKzA/MPsLqdN1SbUrTwysV8oAM51N7uBwk46nH9jB61/Zb5FWW+RJpdv7ABbjWpDOw71aerjyT67Vsm2HD3OPg27/wDL/QAUeXfukV9ld7mFVx5JYADjmyghnEai7rQxZZVtAA9D4k0UmH5cW0F/YrqAFwpufknUtjpa91RNVlxNnCX8sAA5hxuHCLY2msq0bwf/2Q=="
 
 /***/ },
-/* 4 */,
 /* 5 */
+/***/ function(module, exports) {
+
+	module.exports = "data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAeAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzAxNCA3OS4xNTY3OTcsIDIwMTQvMDgvMjAtMDk6NTM6MDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE0IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYwOUQ2REIwOUY1MTExRTZCMEM3RjAzQjREMzQ1RkU0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYwOUQ2REIxOUY1MTExRTZCMEM3RjAzQjREMzQ1RkU0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NjA5RDZEQUU5RjUxMTFFNkIwQzdGMDNCNEQzNDVGRTQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NjA5RDZEQUY5RjUxMTFFNkIwQzdGMDNCNEQzNDVGRTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAQCwsLDAsQDAwQFw8NDxcbFBAQFBsfFxcXFxcfHhcaGhoaFx4eIyUnJSMeLy8zMy8vQEBAQEBAQEBAQEBAQEBAAREPDxETERUSEhUUERQRFBoUFhYUGiYaGhwaGiYwIx4eHh4jMCsuJycnLis1NTAwNTVAQD9AQEBAQEBAQEBAQED/wAARCAAnAHADASIAAhEBAxEB/8QAdgAAAwEBAQEAAAAAAAAAAAAAAAEDAgQFBgEBAAIDAQAAAAAAAAAAAAAAAgMFAAEEBhAAAgIBAwQDAQEAAAAAAAAAAAERAgMhMRJBUWETcYEEkSIRAAIBAwQCAgMAAAAAAAAAAAABAhESAyExQQQiE1EFYTIU/9oADAMBAAIRAxEAPwD652bcty2NWI8w5k1pyXou+L12ZmJ6EXkBZgvHUUc1CrqjLUAsituFn9oilBonhmTFoJ/Im0ZbZG9CVNM1KGrRsyMpdTPOyMqjLDspbl8moOJZiuPM+rlBYHEvoNNpynDRJ5aqNVqL3VduHU1cFo5/YJ5Dmvm4knmbLWwpnm/J1PKL2nI8pN5xLHUjl2UuT0a5ja/RB51M8m/aF4xR7OlUzv8AfW2/9HzhTV8l26nl2zwx1/U0F9dNbDj9ha9z0m1bw/OhO0onj/TW8cocbSVa5Q8es71OTJ1pLYscH2EJaNk+cA80IVobh/5fZkMs12OSSknqd8ZwmtGVtnUasFl5PQ425tqbrZLbQLnQXqqZ/Sr0yOm8OJTlP4aJJ28gB6COyrvyeNyfu7a218a/AtZ1BgAkRsaNuY6gBpmLkmxpeQASCbrPQ6cV8q6N/TADUqU1Fjuu8S9r8kllq12b0Zh4qzNcijtcAOLN6uS36v8ATpTYlalObq2p7p6GPSrXVa3qpcS7JL+sAKzJ666F5h9tPI//2Q=="
+
+/***/ },
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
