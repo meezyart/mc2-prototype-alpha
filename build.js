@@ -84,7 +84,7 @@
 
 
 	// module
-	exports.push([module.id, ".something {\n  font-size: 12px; }\n\nbody {\n  background-color: #EEE;\n  font-family: chalkboard;\n  margin: 0; }\n\n.is-hidden {\n  visibility: hidden; }\n\n.nav {\n  box-shadow: 0px -11px 7px 9px #b1b1b1;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  background: #ffffff;\n  margin-bottom: 1px;\n  padding-top: 0.5em;\n  position: relative;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex;\n  overflow: auto;\n  z-index: 2; }\n  .nav--button {\n    position: relative;\n    padding: 0 1em; }\n  .nav .nav__items-pending-count {\n    background-color: #d90017;\n    border-radius: 50%;\n    text-align: center;\n    position: absolute;\n    font-weight: bold;\n    min-width: 1.1em;\n    font-size: 0.6em;\n    padding: 3px;\n    color: white;\n    right: 0.1em;\n    top: -0.5em; }\n\n.welcome-banner {\n  margin-top: -1px;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex; }\n\n.welcome-container {\n  background-color: #ffffff;\n  padding: 1em; }\n  .welcome-container__signing-content {\n    padding: 4.5em 0 6em 0;\n    display: table;\n    margin: 0 auto; }\n  .welcome-container__disclaimer {\n    color: #b1b1b1;\n    text-align: center;\n    font-size: 0.8em; }\n\n.signing-content--button {\n  background-repeat: no-repeat;\n  background-size: contain;\n  display: inline-block;\n  border-radius: 3px;\n  line-height: 2.3em;\n  text-align: center;\n  font-size: 1.3em;\n  height: 2.5em;\n  color: white;\n  width: 7em; }\n\n.signing-content__sign-up {\n  margin-right: 1em;\n  background-image: url(" + __webpack_require__(4) + "); }\n\n.signing-content__sign-in {\n  margin-left: 1em;\n  background-image: url(" + __webpack_require__(5) + "); }\n\n.application-container {\n  overflow-x: hidden;\n  position: relative;\n  max-width: 420px;\n  margin: 0 auto; }\n  .application-container .overlay-view {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 3;\n    background-color: #ffffff; }\n", ""]);
+	exports.push([module.id, ".something {\n  font-size: 12px; }\n\nbody {\n  background-color: #EEE;\n  font-family: chalkboard;\n  margin: 0; }\n\n.is-hidden {\n  visibility: hidden; }\n\n.from-right-to-left {\n  animation: from-right-to-left 1s; }\n\n.fade-in-and-scale {\n  animation: fade-in-and-scale 1s; }\n\n@keyframes from-right-to-left {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    left: 0%;\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n.nav {\n  box-shadow: 0px -11px 7px 9px #b1b1b1;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  background: #ffffff;\n  margin-bottom: 1px;\n  padding-top: 0.5em;\n  position: relative;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex;\n  overflow: auto;\n  z-index: 2; }\n  .nav--button {\n    position: relative;\n    padding: 0 1em; }\n  .nav .nav__items-pending-count {\n    background-color: #d90017;\n    border-radius: 50%;\n    text-align: center;\n    position: absolute;\n    font-weight: bold;\n    min-width: 1.1em;\n    font-size: 0.6em;\n    padding: 3px;\n    color: white;\n    right: 0.1em;\n    top: -0.5em; }\n\n.welcome-banner {\n  margin-top: -1px;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex; }\n\n.welcome-container {\n  background-color: #ffffff;\n  padding: 1em; }\n  .welcome-container__signing-content {\n    padding: 4.5em 0 6em 0;\n    display: table;\n    margin: 0 auto; }\n  .welcome-container__disclaimer {\n    color: #b1b1b1;\n    text-align: center;\n    font-size: 0.8em; }\n\n.signing-content--button {\n  background-repeat: no-repeat;\n  background-size: contain;\n  display: inline-block;\n  border-radius: 3px;\n  line-height: 2.3em;\n  text-align: center;\n  font-size: 1.3em;\n  height: 2.5em;\n  color: white;\n  width: 7em; }\n\n.signing-content__sign-up {\n  margin-right: 1em;\n  background-image: url(" + __webpack_require__(4) + "); }\n\n.signing-content__sign-in {\n  margin-left: 1em;\n  background-image: url(" + __webpack_require__(5) + "); }\n\n.application-container {\n  overflow-x: hidden;\n  position: relative;\n  max-width: 420px;\n  margin: 0 auto; }\n  .application-container .overlay-view {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 3;\n    background-color: #ffffff; }\n", ""]);
 
 	// exports
 
@@ -412,7 +412,7 @@
 /* 7 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	/*jshint esversion: 6 */
 	// overlay.js
@@ -422,19 +422,21 @@
 	// library for loading content into an overlay modal
 	// 
 
-	window.onload = function () {};
-	// var blah = 0;
-	// var Overlay = {
+	window.onload = function () {
 
-	//   init: function(){
-	//     this.elements();
-	//   },
+	  var Overlay = {
 
-	//   elements: function(){
-	//     var blah = document.querySelectorAll('.blah');
-	//   }
-	// };
-	// Overlay.init();
+	    init: function init() {
+	      this.elements();
+	    },
+
+	    elements: function elements() {
+	      var blah = document.querySelectorAll('.blah');
+	    }
+	  };
+	  Overlay.init();
+	  window.Overlay = Overlay;
+	};
 
 /***/ }
 /******/ ]);

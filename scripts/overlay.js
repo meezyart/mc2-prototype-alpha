@@ -8,16 +8,16 @@
 
 window.onload = () => {
 
+  const Overlay = {
+
+    init: function(){
+      this.elements();
+    },
+
+    elements: function(){
+      var blah = document.querySelectorAll('.blah');
+    }
+  };
+  Overlay.init();
+  window.Overlay = Overlay;
 };
-  // var blah = 0;
-  // var Overlay = {
-
-  //   init: function(){
-  //     this.elements();
-  //   },
-
-  //   elements: function(){
-  //     var blah = document.querySelectorAll('.blah');
-  //   }
-  // };
-  // Overlay.init();
