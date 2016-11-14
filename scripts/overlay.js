@@ -6,8 +6,10 @@
 // library for loading content into an overlay modal
 // 
 
-function nothing() {
-  var blah = 0;
+window.onload = () => {
+
+};
+  // var blah = 0;
   // var Overlay = {
 
   //   init: function(){
@@ -19,4 +21,3 @@ function nothing() {
   //   }
   // };
   // Overlay.init();
-};

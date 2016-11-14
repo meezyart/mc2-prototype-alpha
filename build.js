@@ -47,7 +47,7 @@
 	'use strict';
 
 	__webpack_require__(1);
-	// require('./scripts/overlay.js');
+	__webpack_require__(7);
 
 /***/ },
 /* 1 */
@@ -407,6 +407,34 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	/*jshint esversion: 6 */
+	// overlay.js
+	// 
+	// Author: Conrad Davis Jr
+	// 
+	// library for loading content into an overlay modal
+	// 
+
+	window.onload = function () {};
+	// var blah = 0;
+	// var Overlay = {
+
+	//   init: function(){
+	//     this.elements();
+	//   },
+
+	//   elements: function(){
+	//     var blah = document.querySelectorAll('.blah');
+	//   }
+	// };
+	// Overlay.init();
 
 /***/ }
 /******/ ]);
