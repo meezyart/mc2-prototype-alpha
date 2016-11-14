@@ -424,15 +424,6 @@
 
 	window.onload = function () {
 
-	  // var RS_img_handler = {
-
-	  //   init: function(){
-	  //     this.setupVariables();
-	  //     this.setupElements();
-	  //     this.bpCheck();
-	  //     this.eventHandlers();
-	  //   },
-
 	  var Overlay = {
 
 	    init: function init() {
@@ -445,10 +436,9 @@
 	    },
 
 	    animate: function animate(animation) {
-	      console.log('overlayView: ', Overlay.overlayView);
 	      switch (animation) {
 	        case 'fromRightToLeft':
-	          console.log("Logged fromRightToLeft");
+	          Overlay.overlayView[0].classList.add('from-right-to-left');
 	          break;
 	      }
 	    }

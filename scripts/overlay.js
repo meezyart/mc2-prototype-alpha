@@ -8,17 +8,7 @@
 
 window.onload = () => {
 
-  // var RS_img_handler = {
-
-  //   init: function(){
-  //     this.setupVariables();
-  //     this.setupElements();
-  //     this.bpCheck();
-  //     this.eventHandlers();
-  //   },
-
   var Overlay = {
-
 
     init: function() {
       console.log('this: ', this);
@@ -30,13 +20,11 @@ window.onload = () => {
     },
 
     animate: ( animation ) => {
-      console.log('overlayView: ', Overlay.overlayView);
       switch (animation){
         case 'fromRightToLeft':
-          console.log("Logged fromRightToLeft");
+          Overlay.overlayView[0].classList.add('from-right-to-left');
           break;
       }
-      
     }
 
   };
