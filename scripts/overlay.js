@@ -11,7 +11,6 @@ window.onload = () => {
   var Overlay = {
 
     init: function() {
-      console.log('this: ', this);
       this.elements();
     },
 
