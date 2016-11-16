@@ -430,20 +430,25 @@
 	  var Overlay = {
 
 	    init: function init() {
+	      this.state();
 	      this.elements();
 	    },
 
+	    state: function state() {
+	      this.animationCache = 0;
+	    },
 	    elements: function elements() {
 	      this.overlayView = document.querySelectorAll('.overlay-view');
 	    },
 
 	    animate: function animate(animation) {
-	      switch (animation) {
-	        case 'fromRightToLeft':
-	          Overlay.overlayView[0].classList.add('from-right-to-left');
-	          break;
-	      }
-	    }
+	      Overlay.overlayView[0].classList.add(animation);
+
+	      // store the most recently selected animation request
+	      Overlay.animationCache = animation;
+	    },
+
+	    closeOverlay: function closeOverlay() {}
 
 	  };
 	  Overlay.init();
@@ -478,7 +483,7 @@
 
 	  events: function events() {
 	    return Welcome.signUpBtn[0].onclick = function () {
-	      return Overlay.animate('fromRightToLeft');
+	      return Overlay.animate('from-right-to-left');
 	    };
 	  }
 	};

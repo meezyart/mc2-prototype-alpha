@@ -11,19 +11,26 @@ window.onload = () => {
   var Overlay = {
 
     init: function() {
+      this.state();
       this.elements();
     },
 
+    state: function(){
+      this.animationCache = 0;
+    },
     elements: function() {
       this.overlayView = document.querySelectorAll('.overlay-view');
     },
 
     animate: ( animation ) => {
-      switch (animation){
-        case 'fromRightToLeft':
-          Overlay.overlayView[0].classList.add('from-right-to-left');
-          break;
-      }
+      Overlay.overlayView[0].classList.add(animation);
+
+      // store the most recently selected animation request
+      Overlay.animationCache = animation;
+    },
+
+    closeOverlay: () => {
+
     }
 
   };
