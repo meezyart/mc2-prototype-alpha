@@ -25,3 +25,24 @@ $color-black-medium: #444444
 @mixin justify-content()
   -webkit-justify-content: space-around
   justify-content: space-around
+
+@mixin justify-content()
+  -webkit-justify-content: space-around
+  justify-content: space-around
+
+@mixin animation($value)
+  -webkit-animation: $value
+  animation: $value
+
+@mixin keyframes($animationName)
+  @-webkit-keyframes #{$animationName}
+    @content;
+  
+  @-moz-keyframes #{$animationName}
+    @content;
+  
+  @-o-keyframes #{$animationName}
+    @content;
+  
+  @keyframes #{$animationName}
+    @content;

@@ -33,26 +33,31 @@ window.onload = () => {
       };
     },
 
-    // Overlay animation handler
+    //////////
     // PUBLIC METHODS
+    /////////
+
+    // OVERLAY ANIMATION
+    // 
+    // Overlay animation handler
     // 
     animate: ( animation ) => {
       // clear all animation classes from the overlay
+      Overlay.overlayView[0].setAttribute('class', 'overlay-view');
 
-      // animations based on overlay animation styles ex: 'from-right-to-left'
+      // animations are based on overlay.sass animation styles ex: 'from-right-to-left'
       Overlay.overlayView[0].classList.add(animation);
 
       // store the most recently selected animation request, and reverse its direction
       Overlay.reverseAnimationCache = animation + '-reversed';
     },
 
+    // CLOSE OVERLAY
+    // 
     // handler for closing the overlay modal
+    // 
     closeOverlay: () => {
       Overlay.animate(Overlay.reverseAnimationCache);
-    },
-
-    animationsDirectory: () => {
-
     }
 
   };

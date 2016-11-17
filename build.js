@@ -87,7 +87,7 @@
 
 
 	// module
-	exports.push([module.id, ".something {\n  font-size: 12px; }\n\nbody {\n  background-color: #EEE;\n  font-family: chalkboard;\n  margin: 0; }\n\n.is-hidden {\n  visibility: hidden; }\n\n.overlay-view {\n  background-color: #ffffff;\n  visibility: hidden;\n  position: absolute;\n  transition: 0.5s;\n  height: 100%;\n  width: 100%;\n  z-index: 3;\n  left: 0;\n  top: 0; }\n  .overlay-view__close-btn {\n    height: 1em;\n    width: 1em;\n    background-color: #000000;\n    position: absolute;\n    top: 0;\n    right: 0; }\n\n.from-right-to-left {\n  animation: from-right-to-left 1s;\n  visibility: visible; }\n\n.from-right-to-left-reversed {\n  left: 100%;\n  visibility: visible; }\n\n.fade-in-and-scale {\n  animation: fade-in-and-scale 0.5s;\n  visibility: visible; }\n\n@keyframes from-right-to-left {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@keyframes from-center-to-right {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    left: 0%;\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n.nav {\n  box-shadow: 0px -11px 7px 9px #b1b1b1;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  background: #ffffff;\n  margin-bottom: 1px;\n  padding-top: 0.5em;\n  position: relative;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex;\n  overflow: auto;\n  z-index: 2; }\n  .nav--button {\n    position: relative;\n    padding: 0 1em; }\n  .nav .nav__items-pending-count {\n    background-color: #d90017;\n    border-radius: 50%;\n    text-align: center;\n    position: absolute;\n    font-weight: bold;\n    min-width: 1.1em;\n    font-size: 0.6em;\n    padding: 3px;\n    color: white;\n    right: 0.1em;\n    top: -0.5em; }\n\n.welcome-banner {\n  margin-top: -1px;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex; }\n\n.welcome-container {\n  background-color: #ffffff;\n  padding: 1em; }\n  .welcome-container__signing-content {\n    padding: 4.5em 0 6em 0;\n    display: table;\n    margin: 0 auto; }\n  .welcome-container__disclaimer {\n    color: #b1b1b1;\n    text-align: center;\n    font-size: 0.8em; }\n\n.signing-content--button {\n  background-repeat: no-repeat;\n  background-size: contain;\n  display: inline-block;\n  border-radius: 3px;\n  line-height: 2.3em;\n  text-align: center;\n  font-size: 1.3em;\n  height: 2.5em;\n  color: white;\n  width: 7em; }\n\n.signing-content__sign-up {\n  margin-right: 1em;\n  background-image: url(" + __webpack_require__(4) + "); }\n\n.signing-content__sign-in {\n  margin-left: 1em;\n  background-image: url(" + __webpack_require__(5) + "); }\n\n.application-container {\n  overflow-x: hidden;\n  position: relative;\n  max-width: 420px;\n  margin: 0 auto; }\n", ""]);
+	exports.push([module.id, ".something {\n  font-size: 12px; }\n\nbody {\n  background-color: #EEE;\n  font-family: chalkboard;\n  margin: 0; }\n\n.is-hidden {\n  visibility: hidden; }\n\n.overlay-view {\n  background-color: #ffffff;\n  visibility: hidden;\n  position: absolute;\n  transition: 0.5s;\n  height: 100%;\n  width: 100%;\n  z-index: 3;\n  left: 0;\n  top: 0; }\n  .overlay-view__close-btn {\n    height: 1em;\n    width: 1em;\n    background-color: #000000;\n    position: absolute;\n    top: 0;\n    right: 0; }\n\n.from-right-to-left {\n  -webkit-animation: from-right-to-left 1s;\n  animation: from-right-to-left 1s;\n  visibility: visible; }\n\n.from-right-to-left-reversed {\n  left: 100%;\n  visibility: visible; }\n\n.fade-in-and-scale {\n  -webkit-animation: fade-in-and-scale 0.5s;\n  animation: fade-in-and-scale 0.5s;\n  visibility: visible; }\n\n.fade-in-and-scale-reversed {\n  transform: scale(0.9);\n  opacity: 0; }\n\n@-webkit-keyframes from-right-to-left {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-moz-keyframes from-right-to-left {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-o-keyframes from-right-to-left {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@keyframes from-right-to-left {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-webkit-keyframes from-center-to-right {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-moz-keyframes from-center-to-right {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-o-keyframes from-center-to-right {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@keyframes from-center-to-right {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-webkit-keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    left: 0%;\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n@-moz-keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    left: 0%;\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n@-o-keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    left: 0%;\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n@keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    left: 0%;\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n.nav {\n  box-shadow: 0px -11px 7px 9px #b1b1b1;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  background: #ffffff;\n  margin-bottom: 1px;\n  padding-top: 0.5em;\n  position: relative;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex;\n  overflow: auto;\n  z-index: 2; }\n  .nav--button {\n    position: relative;\n    padding: 0 1em; }\n  .nav .nav__items-pending-count {\n    background-color: #d90017;\n    border-radius: 50%;\n    text-align: center;\n    position: absolute;\n    font-weight: bold;\n    min-width: 1.1em;\n    font-size: 0.6em;\n    padding: 3px;\n    color: white;\n    right: 0.1em;\n    top: -0.5em; }\n\n.welcome-banner {\n  margin-top: -1px;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex; }\n\n.welcome-container {\n  background-color: #ffffff;\n  padding: 1em; }\n  .welcome-container__signing-content {\n    padding: 4.5em 0 6em 0;\n    display: table;\n    margin: 0 auto; }\n  .welcome-container__disclaimer {\n    color: #b1b1b1;\n    text-align: center;\n    font-size: 0.8em; }\n\n.signing-content--button {\n  background-repeat: no-repeat;\n  background-size: contain;\n  display: inline-block;\n  border-radius: 3px;\n  line-height: 2.3em;\n  text-align: center;\n  font-size: 1.3em;\n  height: 2.5em;\n  color: white;\n  width: 7em; }\n\n.signing-content__sign-up {\n  margin-right: 1em;\n  background-image: url(" + __webpack_require__(4) + "); }\n\n.signing-content__sign-in {\n  margin-left: 1em;\n  background-image: url(" + __webpack_require__(5) + "); }\n\n.application-container {\n  overflow-x: hidden;\n  position: relative;\n  max-width: 420px;\n  margin: 0 auto; }\n", ""]);
 
 	// exports
 
@@ -452,25 +452,32 @@
 	      };
 	    },
 
-	    // Overlay animation handler
+	    //////////
 	    // PUBLIC METHODS
+	    /////////
+
+	    // OVERLAY ANIMATION
+	    // 
+	    // Overlay animation handler
 	    // 
 	    animate: function animate(animation) {
 	      // clear all animation classes from the overlay
+	      Overlay.overlayView[0].setAttribute('class', 'overlay-view');
 
-	      // animations based on overlay animation styles ex: 'from-right-to-left'
+	      // animations are based on overlay.sass animation styles ex: 'from-right-to-left'
 	      Overlay.overlayView[0].classList.add(animation);
 
 	      // store the most recently selected animation request, and reverse its direction
 	      Overlay.reverseAnimationCache = animation + '-reversed';
 	    },
 
+	    // CLOSE OVERLAY
+	    // 
 	    // handler for closing the overlay modal
+	    // 
 	    closeOverlay: function closeOverlay() {
 	      Overlay.animate(Overlay.reverseAnimationCache);
-	    },
-
-	    animationsDirectory: function animationsDirectory() {}
+	    }
 
 	  };
 	  Overlay.init();
