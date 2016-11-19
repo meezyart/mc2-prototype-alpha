@@ -8,26 +8,32 @@
 <div class="application-container">
   <!-- overlay-container -->
   <div class="overlay-view"> <div class="overlay-view__close-btn"></div>
+
     <!-- Signup Form -->
     <form>
+      <!-- signup progressbar -->
+      <div class="signup-progressbar">
+        <div class="signup-progressbar__steps activated-step">Step 1</div>
+        <div class="signup-progressbar__steps">Step 2</div>
+      </div>
+
+      <!-- Form container -->
       <div class="form__steps-container">
         <div class="step1 form__row-item">
-          <div class="signup-field">
-            <label>Name</label>
-            <input type="text" name="name">
+          <div class="signup-element">
+            <input type="text" name="key" placeholder="key">
           </div>
-          <div class="signup-field">
-            <label>Email</label>
-            <input type="email" name="email">
+          <div class="signup-element">
+            <input type="email" name="email" placeholder="email">
           </div>
         </div>
         <div class="step2 form__row-item">
-          <label>Name</label>
-          <input type="text" name="name">
-          <label>Email</label>
-          <input type="email" name="email">
+          <input type="text" name="name" placeholder="name">
+          <input type="email" name="email" placeholder="email">
         </div>
       </div>
+      <!-- form submit -->
+      <button class="signup-element form__submit" type="submit">Next</button>
     </form>
   </div>
   
