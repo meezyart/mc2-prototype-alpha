@@ -16,7 +16,7 @@ $color-orange-pale: #f4c655
 
 // HELPERS
 // 
-@mixin flex()
+@mixin flex() 
   display: -webkit-box
   display: -moz-box
   display: -ms-flexbox
@@ -31,6 +31,11 @@ $color-orange-pale: #f4c655
 @mixin justify-content()
   -webkit-justify-content: space-around
   justify-content: space-around
+
+@mixin transform($value)
+  -webkit-transform: $value
+  -ms-transform: $value
+  transform: $value
 
 @mixin animation($value)
   -webkit-animation: $value

@@ -49,8 +49,9 @@
 	__webpack_require__(1);
 
 	// JS
-	__webpack_require__(7);
 	__webpack_require__(8);
+	__webpack_require__(9);
+	__webpack_require__(10);
 
 /***/ },
 /* 1 */
@@ -62,7 +63,33 @@
 	var content = __webpack_require__(2);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(6)(content, {});
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/style-loader/index.js!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./style.sass", function() {
+				var newContent = require("!!./../../node_modules/style-loader/index.js!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./style.sass");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(3);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -79,21 +106,21 @@
 	}
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
+	exports = module.exports = __webpack_require__(4)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".something {\n  font-size: 12px; }\n\nbody {\n  background-color: #EEE;\n  font-family: chalkboard;\n  margin: 0; }\n\n.is-hidden {\n  visibility: hidden; }\n\n.overlay-view {\n  background-color: #ffffff;\n  justify-content: center;\n  flex-direction: column;\n  visibility: hidden;\n  position: absolute;\n  transition: 0.5s;\n  display: flex;\n  height: 100%;\n  width: 100%;\n  z-index: 3;\n  left: 0;\n  top: 0; }\n  .overlay-view__close-btn {\n    height: 1em;\n    width: 1em;\n    background-color: #000000;\n    position: absolute;\n    top: 0;\n    right: 0; }\n\n.from-right-to-left {\n  -webkit-animation: from-right-to-left 1s;\n  animation: from-right-to-left 1s;\n  visibility: visible; }\n\n.from-right-to-left-reversed {\n  left: 100%;\n  visibility: visible; }\n\n.fade-in-and-scale {\n  -webkit-animation: fade-in-and-scale 0.5s;\n  animation: fade-in-and-scale 0.5s;\n  visibility: visible; }\n\n.fade-in-and-scale-reversed {\n  transform: scale(0.9);\n  opacity: 0; }\n\n@-webkit-keyframes from-right-to-left {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-moz-keyframes from-right-to-left {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-o-keyframes from-right-to-left {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@keyframes from-right-to-left {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-webkit-keyframes from-center-to-right {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-moz-keyframes from-center-to-right {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-o-keyframes from-center-to-right {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@keyframes from-center-to-right {\n  0% {\n    left: 100%; }\n  100% {\n    left: 0%; } }\n\n@-webkit-keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    left: 0%;\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n@-moz-keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    left: 0%;\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n@-o-keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    left: 0%;\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n@keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    left: 0%;\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n.nav {\n  box-shadow: 0px -11px 7px 9px #b1b1b1;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  background: #ffffff;\n  margin-bottom: 1px;\n  padding-top: 0.5em;\n  position: relative;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex;\n  overflow: auto;\n  z-index: 2; }\n  .nav--button {\n    position: relative;\n    padding: 0 1em; }\n  .nav .nav__items-pending-count {\n    background-color: #d90017;\n    border-radius: 50%;\n    text-align: center;\n    position: absolute;\n    font-weight: bold;\n    min-width: 1.1em;\n    font-size: 0.6em;\n    padding: 3px;\n    color: white;\n    right: 0.1em;\n    top: -0.5em; }\n\nform {\n  transform: translateX(50%);\n  position: relative;\n  display: block;\n  height: 10em;\n  width: 100%;\n  left: -50%; }\n  form input {\n    border: 1px solid #e2e2e2;\n    text-align: left;\n    font-size: 0.9em;\n    padding: 0.5em;\n    width: 78%; }\n\n.signup-progressbar {\n  justify-content: space-between;\n  margin: 0 auto 1.7em auto;\n  display: flex;\n  width: 82%; }\n  .signup-progressbar__steps {\n    color: #e2e2e2;\n    display: inline-block;\n    text-align: center;\n    transition: 0.5s;\n    width: 48%; }\n    .signup-progressbar__steps:after {\n      background-color: #f4c655;\n      position: relative;\n      transition: 1s;\n      display: block;\n      content: \"\";\n      height: 2px;\n      top: 0.2em;\n      width: 0%; }\n\n.activated-step {\n  color: #f4c655; }\n  .activated-step:after {\n    width: 100%; }\n\n.form__steps-container {\n  transform: translateX(0%);\n  transition: 1s;\n  display: flex;\n  width: 100%; }\n\n.form__row-item {\n  white-space: nowrap;\n  text-align: center;\n  min-width: 100%;\n  display: inline; }\n\n.signup-element {\n  margin: 0 auto 0.8em auto;\n  display: block; }\n\n.form__submit {\n  background-color: #f4c655;\n  margin: 1em auto 0 auto;\n  color: #ffffff;\n  padding: 0.7em 0;\n  font-size: 1em;\n  display: block;\n  width: 82%;\n  border: 0; }\n\n.welcome-banner {\n  margin-top: -1px;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex; }\n\n.welcome-container {\n  background-color: #ffffff;\n  padding: 1em; }\n  .welcome-container__signing-content {\n    padding: 4.5em 0 6em 0;\n    display: table;\n    margin: 0 auto; }\n  .welcome-container__disclaimer {\n    color: #b1b1b1;\n    text-align: center;\n    font-size: 0.8em; }\n\n.signing-content--button {\n  background-repeat: no-repeat;\n  background-size: contain;\n  display: inline-block;\n  border-radius: 3px;\n  line-height: 2.3em;\n  text-align: center;\n  font-size: 1.3em;\n  height: 2.5em;\n  color: white;\n  width: 7em; }\n\n.signing-content__sign-up {\n  margin-right: 1em;\n  background-image: url(" + __webpack_require__(4) + "); }\n\n.signing-content__sign-in {\n  margin-left: 1em;\n  background-image: url(" + __webpack_require__(5) + "); }\n\n.application-container {\n  overflow-x: hidden;\n  position: relative;\n  max-width: 420px;\n  margin: 0 auto; }\n", ""]);
+	exports.push([module.id, ".something {\n  font-size: 12px; }\n\nbody {\n  background-color: #EEE;\n  font-family: chalkboard;\n  margin: 0; }\n\n.is-hidden {\n  visibility: hidden; }\n\n.overlay-view {\n  background-color: #ffffff;\n  justify-content: center;\n  flex-direction: column;\n  visibility: hidden;\n  position: absolute;\n  transition: 0.5s;\n  display: flex;\n  height: 100%;\n  width: 100%;\n  z-index: 3;\n  left: 0;\n  top: 0; }\n  .overlay-view__close-btn {\n    height: 1em;\n    width: 1em;\n    background-color: #000000;\n    position: absolute;\n    top: 0;\n    right: 0; }\n\n.from-right-to-left {\n  -webkit-animation: from-right-to-left 1s;\n  animation: from-right-to-left 1s;\n  visibility: visible; }\n\n.from-right-to-left-reversed {\n  transform: translateX(100%);\n  visibility: visible; }\n\n.fade-in-and-scale {\n  -webkit-animation: fade-in-and-scale 0.5s;\n  animation: fade-in-and-scale 0.5s;\n  visibility: visible; }\n\n.fade-in-and-scale-reversed {\n  transform: scale(0.9);\n  opacity: 0; }\n\n.exit-left {\n  transform: translateX(-100%); }\n\n@-webkit-keyframes from-right-to-left {\n  0% {\n    transform: translateX(100%); }\n  100% {\n    transform: translateX(0%); } }\n\n@-moz-keyframes from-right-to-left {\n  0% {\n    transform: translateX(100%); }\n  100% {\n    transform: translateX(0%); } }\n\n@-o-keyframes from-right-to-left {\n  0% {\n    transform: translateX(100%); }\n  100% {\n    transform: translateX(0%); } }\n\n@keyframes from-right-to-left {\n  0% {\n    transform: translateX(100%); }\n  100% {\n    transform: translateX(0%); } }\n\n@-webkit-keyframes from-center-to-right {\n  0% {\n    transform: translateX(100%); }\n  100% {\n    transform: translateX(0%); } }\n\n@-moz-keyframes from-center-to-right {\n  0% {\n    transform: translateX(100%); }\n  100% {\n    transform: translateX(0%); } }\n\n@-o-keyframes from-center-to-right {\n  0% {\n    transform: translateX(100%); }\n  100% {\n    transform: translateX(0%); } }\n\n@keyframes from-center-to-right {\n  0% {\n    transform: translateX(100%); }\n  100% {\n    transform: translateX(0%); } }\n\n@-webkit-keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    transform: translateX(0%);\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n@-moz-keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    transform: translateX(0%);\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n@-o-keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    transform: translateX(0%);\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n@keyframes fade-in-and-scale {\n  0% {\n    transform: scale(0.5);\n    transform: translateX(0%);\n    opacity: 0; }\n  100% {\n    transform: scale(1);\n    opacity: 1; } }\n\n.nav {\n  box-shadow: 0px -11px 7px 9px #b1b1b1;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  background: #ffffff;\n  margin-bottom: 1px;\n  padding-top: 0.5em;\n  position: relative;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex;\n  overflow: auto;\n  z-index: 2; }\n  .nav--button {\n    position: relative;\n    padding: 0 1em; }\n  .nav .nav__items-pending-count {\n    background-color: #d90017;\n    border-radius: 50%;\n    text-align: center;\n    position: absolute;\n    font-weight: bold;\n    min-width: 1.1em;\n    font-size: 0.6em;\n    padding: 3px;\n    color: white;\n    right: 0.1em;\n    top: -0.5em; }\n\nform {\n  transform: translateX(50%);\n  position: relative;\n  display: block;\n  height: 10em;\n  width: 100%;\n  left: -50%; }\n  form input {\n    border: 1px solid #e2e2e2;\n    text-align: left;\n    font-size: 0.9em;\n    padding: 0.5em;\n    width: 78%; }\n\n.signup-progressbar {\n  justify-content: space-between;\n  margin: 0 auto 1.7em auto;\n  display: flex;\n  width: 82%; }\n  .signup-progressbar__steps {\n    color: #e2e2e2;\n    display: inline-block;\n    text-align: center;\n    transition: 0.5s;\n    width: 48%; }\n    .signup-progressbar__steps:after {\n      background-color: #f4c655;\n      position: relative;\n      transition: 1s;\n      display: block;\n      content: \"\";\n      height: 2px;\n      top: 0.2em;\n      width: 0%; }\n\n.activated-step {\n  color: #f4c655; }\n  .activated-step:after {\n    width: 100%; }\n\n.form__steps-container {\n  transform: translateX(0%);\n  transition: 1s;\n  display: flex;\n  width: 100%; }\n\n.form__row-item {\n  white-space: nowrap;\n  text-align: center;\n  min-width: 100%;\n  display: inline; }\n\n.signup-element {\n  margin: 0 auto 0.8em auto;\n  display: block; }\n\n.form__submit {\n  background-color: #f4c655;\n  margin: 1em auto 0 auto;\n  color: #ffffff;\n  padding: 0.7em 0;\n  font-size: 1em;\n  display: block;\n  width: 82%;\n  border: 0; }\n\n.welcome-banner {\n  margin-top: -1px;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -moz-flex;\n  display: -webkit-flex;\n  display: flex; }\n\n.welcome-container {\n  background-color: #ffffff;\n  padding: 1em; }\n  .welcome-container__signing-content {\n    padding: 4.5em 0 6em 0;\n    display: table;\n    margin: 0 auto; }\n  .welcome-container__disclaimer {\n    color: #b1b1b1;\n    text-align: center;\n    font-size: 0.8em; }\n\n.signing-content--button {\n  background-repeat: no-repeat;\n  background-size: contain;\n  display: inline-block;\n  border-radius: 3px;\n  line-height: 2.3em;\n  text-align: center;\n  font-size: 1.3em;\n  height: 2.5em;\n  color: white;\n  width: 7em; }\n\n.signing-content__sign-up {\n  margin-right: 1em;\n  background-image: url(" + __webpack_require__(5) + "); }\n\n.signing-content__sign-in {\n  margin-left: 1em;\n  background-image: url(" + __webpack_require__(6) + "); }\n\n.application-container {\n  overflow-x: hidden;\n  position: relative;\n  max-width: 420px;\n  margin: 0 auto; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -148,19 +175,19 @@
 	};
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAeAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzAxNCA3OS4xNTY3OTcsIDIwMTQvMDgvMjAtMDk6NTM6MDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE0IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYwOUQ2REFDOUY1MTExRTZCMEM3RjAzQjREMzQ1RkU0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYwOUQ2REFEOUY1MTExRTZCMEM3RjAzQjREMzQ1RkU0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODRBNzNBQzc5RjI2MTFFNkIwQzdGMDNCNEQzNDVGRTQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODRBNzNBQzg5RjI2MTFFNkIwQzdGMDNCNEQzNDVGRTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAQCwsLDAsQDAwQFw8NDxcbFBAQFBsfFxcXFxcfHhcaGhoaFx4eIyUnJSMeLy8zMy8vQEBAQEBAQEBAQEBAQEBAAREPDxETERUSEhUUERQRFBoUFhYUGiYaGhwaGiYwIx4eHh4jMCsuJycnLis1NTAwNTVAQD9AQEBAQEBAQEBAQED/wAARCAAnAHADASIAAhEBAxEB/8QAdgAAAgMBAQAAAAAAAAAAAAAAAAMBAgQFBgEAAgMBAQAAAAAAAAAAAAAAAQMCBAUABhAAAgIBAwQCAgMAAAAAAAAAAAERAgMhEhMxQVEEcSJhkYHRYhEAAgIBAwQDAAAAAAAAAAAAAAEREgIhMQNRIgQUQXET/9oADAMBAAIRAxEAPwD1lm25erfciSHaULdxFh0DpQCeQtXIGToGWar17i72T+BOTPut+F0KPMMSFZM00jr+izYmtorHch5BqRVyz1HSAnkL1ekslUjdDUvJYVvJ3hqC6GEptOU4aFbyd50HXQqSLfZfnsToQ5MtrJGtKE7mupNsuyjs+y0Lurh6ScXLnyWyW3Sob+vgbxy9xeeSSNTzG71/VWxXyp7nrtfY5XoK2b2qJaKv3fwjuuwOXmq4RWyYrJSFNf0IdmzU2KvVWcsnweSm4ZU5U0pKV01t18FuQrfpJneSGaeCTUoo5czT1NXIHIZeUOUlQHsLqbOQOQx8xKzA/MPsLqdN1SbUrTwysV8oAM51N7uBwk46nH9jB61/Zb5FWW+RJpdv7ABbjWpDOw71aerjyT67Vsm2HD3OPg27/wDL/QAUeXfukV9ld7mFVx5JYADjmyghnEai7rQxZZVtAA9D4k0UmH5cW0F/YrqAFwpufknUtjpa91RNVlxNnCX8sAA5hxuHCLY2msq0bwf/2Q=="
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAeAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzAxNCA3OS4xNTY3OTcsIDIwMTQvMDgvMjAtMDk6NTM6MDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE0IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYwOUQ2REIwOUY1MTExRTZCMEM3RjAzQjREMzQ1RkU0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYwOUQ2REIxOUY1MTExRTZCMEM3RjAzQjREMzQ1RkU0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NjA5RDZEQUU5RjUxMTFFNkIwQzdGMDNCNEQzNDVGRTQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NjA5RDZEQUY5RjUxMTFFNkIwQzdGMDNCNEQzNDVGRTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAQCwsLDAsQDAwQFw8NDxcbFBAQFBsfFxcXFxcfHhcaGhoaFx4eIyUnJSMeLy8zMy8vQEBAQEBAQEBAQEBAQEBAAREPDxETERUSEhUUERQRFBoUFhYUGiYaGhwaGiYwIx4eHh4jMCsuJycnLis1NTAwNTVAQD9AQEBAQEBAQEBAQED/wAARCAAnAHADASIAAhEBAxEB/8QAdgAAAwEBAQEAAAAAAAAAAAAAAAEDAgQFBgEBAAIDAQAAAAAAAAAAAAAAAgMFAAEEBhAAAgIBAwQDAQEAAAAAAAAAAAERAgMhMRJBUWETcYEEkSIRAAIBAwQCAgMAAAAAAAAAAAABAhESAyExQQQiE1EFYTIU/9oADAMBAAIRAxEAPwD652bcty2NWI8w5k1pyXou+L12ZmJ6EXkBZgvHUUc1CrqjLUAsituFn9oilBonhmTFoJ/Im0ZbZG9CVNM1KGrRsyMpdTPOyMqjLDspbl8moOJZiuPM+rlBYHEvoNNpynDRJ5aqNVqL3VduHU1cFo5/YJ5Dmvm4knmbLWwpnm/J1PKL2nI8pN5xLHUjl2UuT0a5ja/RB51M8m/aF4xR7OlUzv8AfW2/9HzhTV8l26nl2zwx1/U0F9dNbDj9ha9z0m1bw/OhO0onj/TW8cocbSVa5Q8es71OTJ1pLYscH2EJaNk+cA80IVobh/5fZkMs12OSSknqd8ZwmtGVtnUasFl5PQ425tqbrZLbQLnQXqqZ/Sr0yOm8OJTlP4aJJ28gB6COyrvyeNyfu7a218a/AtZ1BgAkRsaNuY6gBpmLkmxpeQASCbrPQ6cV8q6N/TADUqU1Fjuu8S9r8kllq12b0Zh4qzNcijtcAOLN6uS36v8ATpTYlalObq2p7p6GPSrXVa3qpcS7JL+sAKzJ666F5h9tPI//2Q=="
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -412,7 +439,58 @@
 
 
 /***/ },
-/* 7 */
+/* 8 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/*jshint esversion: 6 */
+	// page.js
+	// 
+	// Author: Conrad Davis Jr
+	// 
+	// library for handling the content on the page canvas
+	// 
+	console.log("PAGE JS");
+
+	var Page = {
+
+	  // init
+	  init: function init() {
+	    this.state();
+	    this.elements();
+	    this.events();
+	  },
+	  // state
+	  state: function state() {},
+	  // elements
+	  elements: function elements() {
+	    this.container = document.getElementById('page');
+	  },
+
+	  // event listeners
+	  events: function events() {},
+
+	  //////////
+	  // PUBLIC METHODS
+	  /////////
+
+	  // UPDATE PAGE CONTENT
+	  // 
+	  // handler for closing the Page modal
+	  // 
+	  updatePage: function updatePage() {
+	    Page.container.innerHTML = '';
+	  }
+
+	};
+
+	console.log('page: ', Page);
+	Page.init();
+	window.Page = Page;
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -485,7 +563,7 @@
 	};
 
 /***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -542,18 +620,23 @@
 	  formHandler: function formHandler() {
 	    // check if the required fields are filled
 	    // if (Welcome.signupElement) {
-	    Welcome.formRowItems[Welcome.formStep].children[0].value;
-	    console.log('children', Welcome.formRowItems[Welcome.formStep].children[0].value);
-	    // console.log('children value: ', Welcome.formRowItems[Welcome.formStep].children.forEach(input => input.value));
+	    //   let inputFields = Welcome.formRowItems[Welcome.formStep].children;
+	    //   for (let key in inputFields){
+	    //     console.log(inputFields[key].value);
+	    //   }
 	    // }
 
 	    // check if there are any more steps to proceed
-	    if (Welcome.signupProgressbarSteps.length - 1 >= Welcome.formStep) {
+	    if (Welcome.signupProgressbarSteps.length - 1 > Welcome.formStep) {
 	      Welcome.formStep++;
 
 	      // add an 'activated' class to the proceeding step
 	      Welcome.signupProgressbarSteps[Welcome.formStep].classList.add('activated-step');
 	      Welcome.formStepsContainer[0].style.transform = "translateX(" + ('-' + Welcome.formStep + '00%') + ")";
+	    } else {
+	      // then we're ready to proceed
+	      Overlay.animate('exit-left');
+	      Page.updatePage();
 	    }
 	  }
 
