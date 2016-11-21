@@ -1,0 +1,68 @@
+// overlay module styles and animation
+// 
+
+// base overlay styles
+.overlay-view
+  background-color: $color-white
+  justify-content: center
+  flex-direction: column
+  visibility: hidden
+  // visibility: visible
+  position: absolute
+  transition: 0.5s
+  display: flex
+  height: 100%
+  width: 100%
+  z-index: 3
+  left: 0
+  top: 0
+  &__close-btn
+    height: 1em
+    width: 1em
+    background-color: $color-black
+    position: absolute
+    top: 0
+    right: 0
+
+// 
+// animations
+// 
+.from-right-to-left
+  @include animation(from-right-to-left 1s)
+  visibility: visible
+
+.from-right-to-left-reversed
+  transform: translateX(100%)
+  visibility: visible
+
+.fade-in-and-scale
+  @include animation(fade-in-and-scale 0.5s)
+  visibility: visible
+
+.fade-in-and-scale-reversed
+  transform: scale(0.9)
+  opacity: 0
+
+.exit-left
+  transform: translateX(-100%)
+
+@include keyframes(from-right-to-left)
+  0%
+    transform: translateX(100%)
+  100%
+    transform: translateX(0%)
+
+@include keyframes(from-center-to-right)
+  0%
+    transform: translateX(100%)
+  100%
+    transform: translateX(0%)
+
+@include keyframes(fade-in-and-scale)
+  0%
+    transform: scale(0.5)
+    transform: translateX(0%)
+    opacity: 0
+  100%
+    transform: scale(1)
+    opacity: 1
