@@ -66,7 +66,12 @@ var Welcome = {
     } else {
       // then we're ready to proceed
       Overlay.animate('exit-left');
+      
+      // go to the profile page
       window.Page.changePage('profile-page');
+
+      // animate the welcome overlay in
+      Overlay.animate('fade-in-and-scale', true);
     }
 
   }
