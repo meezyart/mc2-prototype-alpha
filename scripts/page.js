@@ -42,8 +42,12 @@ var Page = {
   // *TEMPORARY METHOD
   // 
   // this method shows and hides pages with display:none/block
-  changePage: () => {
-    
+  changePage: (element) => {
+    // hide all of the pages
+    [...Page.container.children].forEach(x => x.classList.add('is-hidden'));
+
+    // reveal the desired class
+    document.getElementById(element).classList.remove('is-hidden');
   }
 
 };

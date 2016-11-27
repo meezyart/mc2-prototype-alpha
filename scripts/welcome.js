@@ -66,7 +66,7 @@ var Welcome = {
     } else {
       // then we're ready to proceed
       Overlay.animate('exit-left');
-      Page.updatePage();
+      window.Page.changePage('profile-page');
     }
 
   }
