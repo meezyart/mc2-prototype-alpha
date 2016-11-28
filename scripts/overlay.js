@@ -23,13 +23,18 @@ window.onload = () => {
     // elements
     elements: function() {
       this.overlayView = document.querySelectorAll('.overlay-view');
+      this.secondaryOverlayView = document.querySelectorAll('.secondary-overlay-view');
       this.overlayCloseBtn = document.querySelectorAll('.overlay-view__close-btn');
+      this.secondaryOverlayCloseBtn = document.querySelectorAll('.secondary-overlay-view__close-btn');
     },
 
     // event listeners
     events: () => {
       Overlay.overlayCloseBtn[0].onclick = () => {
         Overlay.closeOverlay();
+      };
+      Overlay.secondaryOverlayCloseBtn[0].onclick = () => {
+        Overlay.closeOverlay(true);
       };
     },
 
@@ -41,12 +46,22 @@ window.onload = () => {
     // 
     // Overlay animation handler
     // 
-    animate: ( animation ) => {
+    animate: ( animation, isSecondaryOverlayView ) => {
+      var overlayElement;
+      var defaultClass;
+      if (isSecondaryOverlayView) {
+        overlayElement = Overlay.secondaryOverlayView[0];
+        defaultClass = 'secondary-overlay-view';
+      }else{
+        overlayElement = Overlay.overlayView[0];
+        defaultClass = 'overlay-view';
+      }
+
       // clear all animation classes from the overlay
-      Overlay.overlayView[0].setAttribute('class', 'overlay-view');
+      overlayElement.setAttribute('class', defaultClass);
 
       // animations are based on overlay.sass animation styles ex: 'from-right-to-left'
-      Overlay.overlayView[0].classList.add(animation);
+      overlayElement.classList.add(animation);
 
       // store the most recently selected animation request, and reverse its direction
       Overlay.reverseAnimationCache = animation + '-reversed';
@@ -56,8 +71,8 @@ window.onload = () => {
     // 
     // handler for closing the overlay modal
     // 
-    closeOverlay: () => {
-      Overlay.animate(Overlay.reverseAnimationCache);
+    closeOverlay: (isSecondaryOverlayView) => {
+      Overlay.animate(Overlay.reverseAnimationCache, isSecondaryOverlayView);
     }
 
   };

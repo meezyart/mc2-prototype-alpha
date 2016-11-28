@@ -7,8 +7,7 @@
 
 <div class="application-container">
   <!-- overlay-container -->
-  <div class="overlay-view"> <div class="overlay-view__close-btn"></div>
-
+  <div class="overlay-view"> <div class="overlay-view__close-btn">X</div>
     <!-- Signup Form -->
     <form>
       <!-- signup progressbar -->
@@ -31,6 +30,15 @@
       <!-- form submit -->
       <button class="signup-element form__submit" type="submit">Next</button>
     </form>
+  </div>
+
+  <!-- secondary overlay-container -->
+  <div class="secondary-overlay-view"> 
+    <div class="secondary-overlay-view__close-btn">X</div>
+    <div class="welcome-notification">
+      <div class="welcome-graphic"><h1>Welcome!</h1></div>
+      <p> additional information here </p>
+    </div>
   </div>
   
   <!-- Navigation bar -->
@@ -61,7 +69,7 @@
     PAGE
   -->
   <div id="page">
-    <div id="welcome-page" class="is-hidden">
+    <div id="welcome-page">
       <!-- Welcome Banner -->
       <div class="welcome-banner"><img src="images/welcome-banner.jpg"></div>
       <section class="welcome-container">
@@ -104,8 +112,8 @@
         </div>
         <div class="gaurdian-buttons__gaurdian-button">
           <div class="gaurdian-buttons__profile-picture"></div>
-          <div class="gaurdian-buttons__gaurdian-name">Mary</div>
-          <div class="gaurdian-buttons__gaurdian-title">Mother</div>
+          <div class="gaurdian-buttons__gaurdian-name">Justin</div>
+          <div class="gaurdian-buttons__gaurdian-title">Father</div>
         </div>
         <div class="gaurdian-buttons__gaurdian-button">
           <div class="gaurdian-buttons__profile-picture add-more"></div>
@@ -118,6 +126,14 @@
       <section class="gaurdian-buttons">
         <div class="gaurdian-buttons__gaurdian-button">
           <div class="gaurdian-buttons__profile-picture" style="background-image: url('images/profile-pic-mary.jpg')"></div>
+          <div class="gaurdian-details__gaurdian-name">Mary Jefferson</div>
+          <div class="gaurdian-details__gaurdian-title">Mother</div>
+        </div>
+        <div class="gaurdian-details__edit">Edit</div>
+        <div class="gaurdian-details__information">
+          <div class="gaurdian-details__profile-picture"></div>
+          <div class="gaurdian-details__gaurdian-name">Justin</div>
+          <div class="gaurdian-details__gaurdian-title">Father</div>
         </div>
       </section>
     </div>
