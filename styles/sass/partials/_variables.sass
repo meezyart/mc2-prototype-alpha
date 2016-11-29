@@ -35,13 +35,9 @@ $color-green-pale: #3fc239
   display: -webkit-flex
   display: flex
 
-@mixin justify-content()
-  -webkit-justify-content: space-around
-  justify-content: space-around
-
-@mixin justify-content()
-  -webkit-justify-content: space-around
-  justify-content: space-around
+@mixin justify-content($value)
+  -webkit-justify-content: $value
+  justify-content: $value
 
 @mixin transform($value)
   -webkit-transform: $value

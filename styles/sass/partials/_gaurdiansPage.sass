@@ -12,6 +12,10 @@
   height: 100vh
 
 .gaurdian-profile
+  @include justify-content(center)
+  align-items: center
+  margin-bottom: 1em
+  display: flex
   &__gaurdian-button
     display: inline-block
     margin-bottom: 3em
@@ -24,16 +28,17 @@
     background-size: cover
     display: inline-block
     border-radius: 50%
-    margin: 0 auto
-    height: 120px
-    width: 120px
+    height: 100px
+    width: 100px
+  &__information
+    display: inline-block
+    margin-left: 1.5em
   &__gaurdian-name
     margin: 0.3em auto 0 auto
     color: $color-gray-medium
     display: inline-block
     line-height: 1.1em
     font-size: 1.3em
-    max-width: 5em
   &__edit
     background-color: $color-gray-pale
     color: $color-white
