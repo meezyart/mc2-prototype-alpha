@@ -133,6 +133,11 @@
     &__info
       display: inline-block
       font-style: italic
+    &--checkboxes
+      border: 2px solid $color-gray-light
+      overflow: scroll
+      padding: 0.5em
+      height: 5em
     input
       padding: 0.3em 1em
       &[type="number"]
@@ -143,18 +148,19 @@
       border: 0
     .checkbox
       display: inline-block
+      margin-bottom: 0.3em
       input[type="checkbox"]
         display: none
         &:checked + label
-          background-color: $color-orange
+          background-color: $color-orange-pale
       label
-        background-color: $color-white
+        background-color: $color-gray-medium
+        padding: 0.2em 0.6em 0em
         display: inline-block
         position: relative
-        margin-right: 1em
+        margin: 0 0.1em
         color: $color-white
-        font-size: 1em
-        padding: 0.5em 1em
+        font-size: 0.9em
         float: left
         &:after
           position: absolute
