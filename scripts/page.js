@@ -21,10 +21,16 @@ var Page = {
   // elements
   elements: function() {
     this.container = document.getElementById('page');
+    this.profileButtons = document.querySelectorAll('[navbutton]');
   },
 
   // event listeners
   events: () => {
+    // listen to all 
+    [...Page.profileButtons].forEach(x => x.addEventListener('click', (e) =>{
+      console.log('this:', x);
+      Page.changePage(x.getAttribute('view-path'));
+    }));
   },
 
   //////////
@@ -52,6 +58,5 @@ var Page = {
 
 };
 
-console.log('page: ', Page);
 Page.init();
 window.Page = Page;
