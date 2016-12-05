@@ -27,9 +27,8 @@ var Page = {
   // event listeners
   events: () => {
     // listen to all 
-    [...Page.profileButtons].forEach(x => x.addEventListener('click', (e) =>{
-      console.log('this:', x);
-      Page.changePage(x.getAttribute('view-path'));
+    [...Page.profileButtons].forEach(element => element.addEventListener('click', (e) => {
+      Page.changePage(element.getAttribute('view-path'));
     }));
   },
 

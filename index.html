@@ -47,7 +47,7 @@
     <div class="nav__logo nav--button"><img src="images/logo.jpg"></div>
 
     <!-- Nav home button -->
-    <div class="nav__home-btn nav--button"><img src="images/home-btn.jpg"></div>
+    <div class="nav__home-btn nav--button" view-path="profile-page" navbutton><img src="images/home-btn.jpg"></div>
 
     <!-- Nav friends button -->
     <div class="nav__friends-btn nav--button">
@@ -91,7 +91,7 @@
           <div class="profile-icon children"></div>
           <div class="icon-name">Children</div>
         </div>
-        <div class="profile-button" view-path="gaurdians-page" navbutton>
+        <div class="profile-button" view-path="host-page" navbutton>
           <div class="profile-icon hosts"></div>
           <div class="icon-name">Become a Host</div>
         </div>
@@ -105,17 +105,17 @@
     <div id="gaurdians-page" class="is-hidden">
       <div class="page-banner gaurdians-banner"><span></span>gaurdians</div>
       <section class="gaurdian-buttons">
-        <div class="gaurdian-buttons__gaurdian-button">
+        <div class="gaurdian-buttons__gaurdian-button" view-path="gaurdians-detail-page" navbutton>
           <div class="gaurdian-buttons__profile-picture" style="background-image: url('images/profile-pic-mary.jpg')"></div>
           <div class="gaurdian-buttons__gaurdian-name">Mary</div>
           <div class="gaurdian-buttons__gaurdian-title">Mother</div>
         </div>
-        <div class="gaurdian-buttons__gaurdian-button">
+        <div class="gaurdian-buttons__gaurdian-button" view-path="gaurdians-detail-page" navbutton>
           <div class="gaurdian-buttons__profile-picture"></div>
           <div class="gaurdian-buttons__gaurdian-name">Justin</div>
           <div class="gaurdian-buttons__gaurdian-title">Father</div>
         </div>
-        <div class="gaurdian-buttons__gaurdian-button">
+        <div class="gaurdian-buttons__gaurdian-button" navbutton>
           <div class="gaurdian-buttons__profile-picture add-more"></div>
           <div class="gaurdian-buttons__gaurdian-name">Add a Gaurdian</div>
         </div>
@@ -227,11 +227,11 @@
     <div id="children-page" class="is-hidden">
       <div class="page-banner children-banner"><span></span>Children</div>
       <section class="children-buttons">
-        <div class="children-buttons__children-button">
+        <div class="children-buttons__children-button" view-path="children-detail-page" navbutton>
           <div class="children-buttons__profile-picture" style="background-image: url('images/travis-profile.jpg')"></div>
           <div class="children-buttons__children-name">Travis</div>
         </div>
-        <div class="children-buttons__children-button">
+        <div class="children-buttons__children-button" view-path="children-detail-page" navbutton>
           <div class="children-buttons__profile-picture"></div>
           <div class="children-buttons__children-name">Samara</div>
         </div>
