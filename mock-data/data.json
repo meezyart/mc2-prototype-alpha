@@ -1,0 +1,16 @@
+{
+  "gaurdians": [
+    {
+      "id": 18837736,
+      "firstName": "Mary",
+      "lastName": "Jefferson",
+      "gaurdianStatus": "Mother",
+      "profilePicture": "images/profile-pic-mary.jpg",
+      "additionalDetails": [
+        {"profession": "English Teacher"},
+        {"profession": "English Teacher"},
+        {"profession": "English Teacher"}
+      ],
+    } 
+  ]
+}
