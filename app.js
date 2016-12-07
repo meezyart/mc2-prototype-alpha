@@ -1,4 +1,10 @@
+
 require('./styles/sass/style.sass');
+
+
+// Templates
+window.Templates = {};
+require('./scripts/templates/gaurdian-page-list.js');
 
 // JS
 require('./scripts/page.js');

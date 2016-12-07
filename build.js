@@ -48,10 +48,14 @@
 
 	__webpack_require__(1);
 
-	// JS
+	// Templates
+	window.Templates = {};
 	__webpack_require__(16);
+
+	// JS
 	__webpack_require__(17);
 	__webpack_require__(18);
+	__webpack_require__(19);
 
 /***/ },
 /* 1 */
@@ -490,6 +494,24 @@
 /* 16 */
 /***/ function(module, exports) {
 
+	"use strict";
+
+	/*jshint esversion: 6 */
+	//gaurdian-details-list.js
+	// 
+	// Author: Conrad Davis Jr
+	// 
+	// This js file serves a template for the Gaurdians detail page
+	// 
+
+	var gaurdianPage = "\n  <div class=\"gaurdian-buttons__gaurdian-button\" view-path=\"gaurdians-detail-page\" navbutton>\n    <div class=\"gaurdian-buttons__profile-picture\" style=\"background-image: url('images/profile-pic-mary.jpg')\"></div>\n    <div class=\"gaurdian-buttons__gaurdian-name\">Mary</div>\n    <div class=\"gaurdian-buttons__gaurdian-title\">Mother</div>\n  </div>\n\n  ";
+
+	window.Templates.gaurdianPage = gaurdianPage;
+
+/***/ },
+/* 17 */
+/***/ function(module, exports) {
+
 	'use strict';
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -500,9 +522,7 @@
 	// Author: Conrad Davis Jr
 	// 
 	// library for handling the content on the page canvas
-	// 
-	console.log("PAGE JS");
-
+	//
 	var Page = {
 
 	  // init
@@ -560,7 +580,7 @@
 	window.Page = Page;
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -648,7 +668,7 @@
 	};
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	'use strict';

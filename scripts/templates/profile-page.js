@@ -7,10 +7,9 @@
 
 profilePage = 
   `
-  <div class="profile-page">
-    <div class="profile-page__content">
-      <div></div>
-    </div>
+  <div class="profile-button" view-path="gaurdians-page" navbutton>
+    <div class="profile-icon gaurdians"></div>
+    <div class="icon-name">Gaurdians</div>
   </div>
 
   `

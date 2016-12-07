@@ -4,9 +4,7 @@
 // Author: Conrad Davis Jr
 // 
 // library for handling the content on the page canvas
-// 
-console.log("PAGE JS");
-
+//
 var Page = {
 
   // init

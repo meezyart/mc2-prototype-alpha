@@ -1,8 +1,8 @@
-// profile-page.js
+//gaurdian-details-list.js
 // 
 // Author: Conrad Davis Jr
 // 
-// This js file serves a template for the Profile landing page
+// This js file serves a template for the Gaurdians detail page
 // 
 
 profilePage = 
