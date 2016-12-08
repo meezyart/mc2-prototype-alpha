@@ -3,7 +3,7 @@ require('./styles/sass/style.sass');
 
 
 // Templates
-window.Templates = {};
+window.Templates = {}; //set a templates object on the window
 require('./scripts/templates/gaurdian-page-list.js');
 
 // JS

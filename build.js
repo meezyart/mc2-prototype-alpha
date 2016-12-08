@@ -49,7 +49,7 @@
 	__webpack_require__(1);
 
 	// Templates
-	window.Templates = {};
+	window.Templates = {}; //set a templates object on the window
 	__webpack_require__(16);
 
 	// JS
@@ -494,7 +494,7 @@
 /* 16 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	/*jshint esversion: 6 */
 	//gaurdian-details-list.js
@@ -504,9 +504,14 @@
 	// This js file serves a template for the Gaurdians detail page
 	// 
 
-	var gaurdianPage = "\n  <div class=\"gaurdian-buttons__gaurdian-button\" view-path=\"gaurdians-detail-page\" navbutton>\n    <div class=\"gaurdian-buttons__profile-picture\" style=\"background-image: url('images/profile-pic-mary.jpg')\"></div>\n    <div class=\"gaurdian-buttons__gaurdian-name\">Mary</div>\n    <div class=\"gaurdian-buttons__gaurdian-title\">Mother</div>\n  </div>\n\n  ";
+	var gaurdiansPage = {
+	  html: '<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdians-detail-page" navbutton>\n          <div class="gaurdian-buttons__profile-picture" style="background-image: url(\'images/profile-pic-mary.jpg\')"></div>\n          <div class="gaurdian-buttons__gaurdian-name">Mary</div>\n          <div class="gaurdian-buttons__gaurdian-title">Mother</div>\n        </div>',
 
-	window.Templates.gaurdianPage = gaurdianPage;
+	  selector: 'gaurdian-buttons'
+	};
+
+	// add the template to the Templates object
+	window.Templates.gaurdiansPage = gaurdiansPage;
 
 /***/ },
 /* 17 */
@@ -570,8 +575,10 @@
 	      return x.classList.add('is-hidden');
 	    });
 
-	    // reveal the desired class
+	    // reveal the desired page
 	    document.getElementById(element).classList.remove('is-hidden');
+
+	    // serve the corresponding template(s) for selected page
 	  }
 
 	};

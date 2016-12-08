@@ -49,8 +49,11 @@ var Page = {
     // hide all of the pages
     [...Page.container.children].forEach(x => x.classList.add('is-hidden'));
 
-    // reveal the desired class
+    // reveal the desired page
     document.getElementById(element).classList.remove('is-hidden');
+
+    // serve the corresponding template(s) for selected page
+    
   }
 
 };
