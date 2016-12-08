@@ -7,14 +7,13 @@
 // 
 
 const gaurdiansPage = {
+  targetContainer: '.gaurdian-buttons',
   html: 
-        `<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdians-detail-page" navbutton>
+        `<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdiansDetailPage" navbutton>
           <div class="gaurdian-buttons__profile-picture" style="background-image: url('images/profile-pic-mary.jpg')"></div>
           <div class="gaurdian-buttons__gaurdian-name">Mary</div>
           <div class="gaurdian-buttons__gaurdian-title">Mother</div>
-        </div>`,
-
-  selector: 'gaurdian-buttons'
+        </div>`
 };
 
 // add the template to the Templates object

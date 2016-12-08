@@ -24,7 +24,7 @@ var Page = {
 
   // event listeners
   events: () => {
-    // listen to all 
+    // listen to all elements with the 'navbutton' attribute on it
     [...Page.profileButtons].forEach(element => element.addEventListener('click', (e) => {
       Page.changePage(element.getAttribute('view-path'));
     }));
@@ -42,7 +42,7 @@ var Page = {
     // Page.container.innerHTML = '';
   },
 
-  // *TEMPORARY METHOD
+  // *TEMPORARY METHODS
   // 
   // this method shows and hides pages with display:none/block
   changePage: (element) => {
@@ -52,8 +52,12 @@ var Page = {
     // reveal the desired page
     document.getElementById(element).classList.remove('is-hidden');
 
-    // serve the corresponding template(s) for selected page
-    
+    // serve the corresponding template(s) for the revealed page
+    let thisTemplate = window.Templates[element]; //get the template
+    let targetSelector = thisTemplate.targetContainer;
+    let targetContainer = document.querySelectorAll(targetSelector);
+
+    targetContainer[0].innerHTML = thisTemplate.html;
   }
 
 };
