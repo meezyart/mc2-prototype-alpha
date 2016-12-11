@@ -5,6 +5,32 @@
 // 
 // library for handling the content on the page canvas
 //
+
+
+function loadXMLDoc() {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+           if (xmlhttp.status == 200) {
+               console.log('xmlhttp.responseText: ', xmlhttp.responseText);
+           }
+           else if (xmlhttp.status == 400) {
+              alert('There was an error 400');
+           }
+           else {
+               alert('something else other than 200 was returned');
+           }
+        }
+    };
+
+    xmlhttp.open("GET", "./mock-data/data.json", true);
+    xmlhttp.send();
+    console.log('xmlhttp: ', xmlhttp);
+}
+
+loadXMLDoc();
+
 var Page = {
 
   // init
