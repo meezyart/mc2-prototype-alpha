@@ -506,6 +506,7 @@
 
 	var gaurdiansPage = {
 	  targetContainer: '.gaurdian-buttons',
+	  dataStore: 'gaurdianData',
 	  html: '<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdiansDetailPage" navbutton>\n          <div class="gaurdian-buttons__profile-picture" style="background-image: url(\'images/profile-pic-mary.jpg\')"></div>\n          <div class="gaurdian-buttons__gaurdian-name">Mary</div>\n          <div class="gaurdian-buttons__gaurdian-title">Mother</div>\n        </div>'
 	};
 
@@ -550,7 +551,6 @@
 	    this.container = document.getElementById('page');
 	    this.bodyElement = document.querySelector('body');
 	    this.profileButtons = document.querySelectorAll('[navbutton]');
-	    console.log('profileButtons: ', Page.profileButtons);
 	  },
 
 	  // event listeners
@@ -571,6 +571,7 @@
 	      if (xmlhttp.readyState == XMLHttpRequest.DONE) {
 	        if (xmlhttp.status == 200) {
 	          var getData = JSON.parse(xmlhttp.responseText);
+	          console.log('dataStore: ', dataStore);
 	          Page[dataStore] = getData;
 	        } else if (xmlhttp.status == 400) {
 	          alert('There was an error 400');
@@ -600,7 +601,7 @@
 	  // 
 	  // this method shows and hides pages with display:none/block
 	  changePage: function changePage(element) {
-	    console.log('jsonData: ', Page.gaurdianData);
+
 	    // hide all of the pages
 	    [].concat(_toConsumableArray(Page.container.children)).forEach(function (x) {
 	      return x.classList.add('is-hidden');
@@ -613,13 +614,21 @@
 	    console.log('element: ', element);
 	    var thisTemplate = window.Templates[element]; //get the template
 	    console.log('thisTemplate: ', thisTemplate);
+	    var targetDataStore = thisTemplate.dataStore;
+	    Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
+	    var thisData = Page[targetDataStore].gaurdians;
 	    var targetSelector = thisTemplate.targetContainer;
 	    var targetContainer = document.querySelectorAll(targetSelector);
 
-	    // for each row of data, output the matching html template
-	    targetContainer[0].innerHTML = thisTemplate.html;
+	    thisData.forEach(function (gaurdian) {
+	      targetContainer[0].insertAdjacentHTML('afterbegin', thisTemplate.html);
+	      console.log('gaurdian: ', gaurdian);
+	    });
 
-	    // add a listener to the added element
+	    // for each row of data, output the matching html template
+
+
+	    // gather all of the elements with the navbutton attribute
 	    var navButtons = document.querySelectorAll('[navbutton]');
 
 	    // unbind the event listeners for the nav buttons

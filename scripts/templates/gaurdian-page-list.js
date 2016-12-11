@@ -8,6 +8,7 @@
 
 const gaurdiansPage = {
   targetContainer: '.gaurdian-buttons',
+  dataStore: 'gaurdianData',
   html: 
         `<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdiansDetailPage" navbutton>
           <div class="gaurdian-buttons__profile-picture" style="background-image: url('images/profile-pic-mary.jpg')"></div>

@@ -29,7 +29,6 @@ const Page = {
     this.container = document.getElementById('page');
     this.bodyElement = document.querySelector('body');
     this.profileButtons = document.querySelectorAll('[navbutton]');
-    console.log('profileButtons: ', Page.profileButtons);
   },
 
   // event listeners
@@ -48,6 +47,7 @@ const Page = {
       if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
          if (xmlhttp.status == 200) {
             let getData = JSON.parse(xmlhttp.responseText);
+            console.log('dataStore: ', dataStore);
             Page[dataStore] = getData;
          }
          else if (xmlhttp.status == 400) {
@@ -79,7 +79,7 @@ const Page = {
   // 
   // this method shows and hides pages with display:none/block
   changePage: (element) => {
-    console.log('jsonData: ', Page.gaurdianData);
+
     // hide all of the pages
     [...Page.container.children].forEach(x => x.classList.add('is-hidden'));
 
@@ -90,13 +90,21 @@ const Page = {
     console.log('element: ', element);
     let thisTemplate = window.Templates[element]; //get the template
     console.log('thisTemplate: ', thisTemplate);
+    let targetDataStore = thisTemplate.dataStore;
+    Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
+    let thisData = Page[targetDataStore].gaurdians;
     let targetSelector = thisTemplate.targetContainer;
     let targetContainer = document.querySelectorAll(targetSelector);
 
+    thisData.forEach(gaurdian => {  
+      targetContainer[0].insertAdjacentHTML( 'afterbegin', thisTemplate.html );
+      console.log('gaurdian: ', gaurdian);
+    });
+
     // for each row of data, output the matching html template
-    targetContainer[0].innerHTML = thisTemplate.html;
+
     
-    // add a listener to the added element
+    // gather all of the elements with the navbutton attribute
     let navButtons = document.querySelectorAll('[navbutton]');
 
     // unbind the event listeners for the nav buttons
