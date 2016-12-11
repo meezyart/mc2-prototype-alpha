@@ -528,37 +528,21 @@
 	// library for handling the content on the page canvas
 	//
 
-
-	function loadXMLDoc() {
-	  var xmlhttp = new XMLHttpRequest();
-
-	  xmlhttp.onreadystatechange = function () {
-	    if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-	      if (xmlhttp.status == 200) {
-	        console.log('xmlhttp.responseText: ', xmlhttp.responseText);
-	      } else if (xmlhttp.status == 400) {
-	        alert('There was an error 400');
-	      } else {
-	        alert('something else other than 200 was returned');
-	      }
-	    }
-	  };
-
-	  xmlhttp.open("GET", "./mock-data/data.json", true);
-	  xmlhttp.send();
-	  console.log('xmlhttp: ', xmlhttp);
-	}
-
-	loadXMLDoc();
-
 	var Page = {
 
 	  // init
 	  init: function init() {
+	    this.getJson();
 	    this.state();
 	    this.elements();
 	    this.events();
 	  },
+
+	  // get initial json data
+	  getJson: function getJson() {
+	    this.loadXMLDoc("./mock-data/data.json", 'gaurdianData');
+	  },
+
 	  // state
 	  state: function state() {},
 	  // elements
@@ -579,6 +563,27 @@
 	    });
 	  },
 
+	  // collect Json data
+	  loadXMLDoc: function loadXMLDoc(url, dataStore) {
+	    var xmlhttp = new XMLHttpRequest();
+
+	    xmlhttp.onreadystatechange = function () {
+	      if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+	        if (xmlhttp.status == 200) {
+	          var getData = JSON.parse(xmlhttp.responseText);
+	          Page[dataStore] = getData;
+	        } else if (xmlhttp.status == 400) {
+	          alert('There was an error 400');
+	        } else {
+	          alert('something else other than 200 was returned');
+	        }
+	      }
+	    };
+
+	    xmlhttp.open("GET", url, true);
+	    xmlhttp.send();
+	  },
+
 	  //////////
 	  // PUBLIC METHODS
 	  /////////
@@ -595,6 +600,7 @@
 	  // 
 	  // this method shows and hides pages with display:none/block
 	  changePage: function changePage(element) {
+	    console.log('jsonData: ', Page.gaurdianData);
 	    // hide all of the pages
 	    [].concat(_toConsumableArray(Page.container.children)).forEach(function (x) {
 	      return x.classList.add('is-hidden');

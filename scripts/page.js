@@ -6,39 +6,21 @@
 // library for handling the content on the page canvas
 //
 
-
-function loadXMLDoc() {
-    var xmlhttp = new XMLHttpRequest();
-
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-           if (xmlhttp.status == 200) {
-               console.log('xmlhttp.responseText: ', xmlhttp.responseText);
-           }
-           else if (xmlhttp.status == 400) {
-              alert('There was an error 400');
-           }
-           else {
-               alert('something else other than 200 was returned');
-           }
-        }
-    };
-
-    xmlhttp.open("GET", "./mock-data/data.json", true);
-    xmlhttp.send();
-    console.log('xmlhttp: ', xmlhttp);
-}
-
-loadXMLDoc();
-
-var Page = {
+const Page = {
 
   // init
   init: function() {
+    this.getJson();
     this.state();
     this.elements();
     this.events();
   },
+
+  // get initial json data
+  getJson: function(){
+    this.loadXMLDoc("./mock-data/data.json", 'gaurdianData');
+  },
+
   // state
   state: function(){
   },
@@ -58,6 +40,29 @@ var Page = {
     }));
   },
 
+  // collect Json data
+  loadXMLDoc: function(url, dataStore) {
+    let xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+         if (xmlhttp.status == 200) {
+            let getData = JSON.parse(xmlhttp.responseText);
+            Page[dataStore] = getData;
+         }
+         else if (xmlhttp.status == 400) {
+            alert('There was an error 400');
+         }
+         else {
+            alert('something else other than 200 was returned');
+         }
+      }
+    };
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+  },
+
   //////////
   // PUBLIC METHODS
   /////////
@@ -74,6 +79,7 @@ var Page = {
   // 
   // this method shows and hides pages with display:none/block
   changePage: (element) => {
+    console.log('jsonData: ', Page.gaurdianData);
     // hide all of the pages
     [...Page.container.children].forEach(x => x.classList.add('is-hidden'));
 
