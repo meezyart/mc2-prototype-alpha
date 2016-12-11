@@ -19,7 +19,9 @@ var Page = {
   // elements
   elements: function() {
     this.container = document.getElementById('page');
+    this.bodyElement = document.querySelector('body');
     this.profileButtons = document.querySelectorAll('[navbutton]');
+    console.log('profileButtons: ', Page.profileButtons);
   },
 
   // event listeners
@@ -53,11 +55,26 @@ var Page = {
     document.getElementById(element).classList.remove('is-hidden');
 
     // serve the corresponding template(s) for the revealed page
+    console.log('element: ', element);
     let thisTemplate = window.Templates[element]; //get the template
+    console.log('thisTemplate: ', thisTemplate);
     let targetSelector = thisTemplate.targetContainer;
     let targetContainer = document.querySelectorAll(targetSelector);
 
+    // for each row of data, output the matching html template
     targetContainer[0].innerHTML = thisTemplate.html;
+    
+    // add a listener to the added element
+    let navButtons = document.querySelectorAll('[navbutton]');
+
+    // unbind the event listeners for the nav buttons
+    navButtons.forEach(element => element.removeEventListener('click', (e) => {}));
+
+    // add a new set of event listeners to the nav buttons 
+    navButtons.forEach(element => element.addEventListener('click', (e) => {
+      Page.changePage(element.getAttribute('view-path'));
+    }));
+
   }
 
 };
