@@ -6,7 +6,6 @@
 // Scripts for managing elements on the welcome page
 // 
 
-
 var Welcome = {
 
   init: function() {

@@ -84,17 +84,30 @@ const Page = {
     [...Page.container.children].forEach(x => x.classList.add('is-hidden'));
 
     // reveal the desired page
+    console.log('element: ', element);
     document.getElementById(element).classList.remove('is-hidden');
 
+
+    console.log('window.Templates: ', window.Templates);
     // serve the corresponding template(s) for the revealed page
     let thisTemplate = window.Templates[element]; //get the corresponding template
+    console.log('thisTemplate: ', thisTemplate);
     let targetDataStore = thisTemplate.dataStore;
+    console.log('targetDataStore: ', typeof(targetDataStore));
 
     // get the JSON data for the selected template
     Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
 
+    // grab the prop name for the data tree
+    let tableKey = thisTemplate.tableKey;
+    console.log('tableKey: ', tableKey);
+
+    if(!tableKey)
+      console.warn("there was no tableKey found in this template");
+
     // store the data that belongs to this template
-    let pageData = Page[targetDataStore].gaurdians;
+    console.log('Page[targetDataStore]: ', Page[targetDataStore]);
+    let pageData = Page[targetDataStore][tableKey];
     let targetSelector = thisTemplate.targetContainer;
 
     // get the element container element

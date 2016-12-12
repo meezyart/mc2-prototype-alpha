@@ -27,5 +27,31 @@
         "profession": "English Teacher"
       }
     }
+  ],
+  "children": [
+    {
+      "firstName": "Travissss",
+      "lastName": "Jefferson",
+      "profilePicture": "url('images/travis-profile.jpg')",
+      "additionalDetails": {
+        "profession": "English Teacher",
+        "profession": "English Teacher",
+        "profession": "English Teacher",
+        "profession": "English Teacher",
+        "profession": "English Teacher"
+      }
+    },
+    {
+      "firstName": "Samara",
+      "lastName": "Jefferson",
+      "profilePicture": "",
+      "additionalDetails": {
+        "profession": "English Teacher",
+        "profession": "English Teacher",
+        "profession": "English Teacher",
+        "profession": "English Teacher",
+        "profession": "English Teacher"
+      }
+    }
   ]
 }
