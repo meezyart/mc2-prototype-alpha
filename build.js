@@ -508,7 +508,7 @@
 	  targetContainer: '.gaurdian-buttons',
 	  dataStore: 'gaurdianData',
 	  html: function html(data) {
-	    return '<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdiansDetailPage" navbutton>\n      <div class="gaurdian-buttons__profile-picture" style="background-image: url(\'images/profile-pic-mary.jpg\')"></div>\n      <div class="gaurdian-buttons__gaurdian-name">' + data.firstName + '</div>\n      <div class="gaurdian-buttons__gaurdian-title">Mother</div>\n    </div>';
+	    return '<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdiansDetailPage" navbutton>\n      <div class="gaurdian-buttons__profile-picture" style="background-image: ' + data.profilePicture + '"></div>\n      <div class="gaurdian-buttons__gaurdian-name">' + data.firstName + ' ' + data.lastName + '</div>\n      <div class="gaurdian-buttons__gaurdian-title">' + data.gaurdianStatus + '</div>\n    </div>';
 	  }
 	};
 
@@ -613,16 +613,13 @@
 	    document.getElementById(element).classList.remove('is-hidden');
 
 	    // serve the corresponding template(s) for the revealed page
-	    console.log('element: ', element);
-	    var thisTemplate = window.Templates[element]; //get the template
-	    console.log('thisTemplate: ', thisTemplate);
-
+	    var thisTemplate = window.Templates[element]; //get the corresponding template
 	    var targetDataStore = thisTemplate.dataStore;
 
 	    // get the JSON data for the selected template
 	    Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
 
-	    // store the data the belongs to this template
+	    // store the data that belongs to this template
 	    var pageData = Page[targetDataStore].gaurdians;
 	    var targetSelector = thisTemplate.targetContainer;
 

@@ -5,7 +5,7 @@
       "firstName": "Mary",
       "lastName": "Jefferson",
       "gaurdianStatus": "Mother",
-      "profilePicture": "images/profile-pic-mary.jpg",
+      "profilePicture": "url('images/profile-pic-mary.jpg')",
       "additionalDetails": {
         "profession": "English Teacher",
         "profession": "English Teacher",
@@ -15,36 +15,10 @@
       }
     },
     {
-      "firstName": "Kevin",
+      "firstName": "James",
       "lastName": "Jefferson",
-      "gaurdianStatus": "Mother",
-      "profilePicture": "images/profile-pic-mary.jpg",
-      "additionalDetails": {
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher"
-      }
-    },
-    {
-      "firstName": "Jmes",
-      "lastName": "Jefferson",
-      "gaurdianStatus": "Mother",
-      "profilePicture": "images/profile-pic-mary.jpg",
-      "additionalDetails": {
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher"
-      }
-    },
-    {
-      "firstName": "Ouijen",
-      "lastName": "Jefferson",
-      "gaurdianStatus": "Mother",
-      "profilePicture": "images/profile-pic-mary.jpg",
+      "gaurdianStatus": "Father",
+      "profilePicture": "",
       "additionalDetails": {
         "profession": "English Teacher",
         "profession": "English Teacher",

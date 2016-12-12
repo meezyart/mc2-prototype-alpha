@@ -11,9 +11,9 @@ const gaurdiansPage = {
   dataStore: 'gaurdianData',
   html: (data) => (
     `<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdiansDetailPage" navbutton>
-      <div class="gaurdian-buttons__profile-picture" style="background-image: url('images/profile-pic-mary.jpg')"></div>
-      <div class="gaurdian-buttons__gaurdian-name">${data.firstName}</div>
-      <div class="gaurdian-buttons__gaurdian-title">Mother</div>
+      <div class="gaurdian-buttons__profile-picture" style="background-image: ${data.profilePicture}"></div>
+      <div class="gaurdian-buttons__gaurdian-name">${data.firstName} ${data.lastName}</div>
+      <div class="gaurdian-buttons__gaurdian-title">${data.gaurdianStatus}</div>
     </div>`
   )
 };

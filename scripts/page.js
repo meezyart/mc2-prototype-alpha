@@ -87,16 +87,13 @@ const Page = {
     document.getElementById(element).classList.remove('is-hidden');
 
     // serve the corresponding template(s) for the revealed page
-    console.log('element: ', element);
-    let thisTemplate = window.Templates[element]; //get the template
-    console.log('thisTemplate: ', thisTemplate);
-
+    let thisTemplate = window.Templates[element]; //get the corresponding template
     let targetDataStore = thisTemplate.dataStore;
 
     // get the JSON data for the selected template
     Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
 
-    // store the data the belongs to this template
+    // store the data that belongs to this template
     let pageData = Page[targetDataStore].gaurdians;
     let targetSelector = thisTemplate.targetContainer;
 
