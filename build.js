@@ -614,16 +614,25 @@
 	    console.log('element: ', element);
 	    var thisTemplate = window.Templates[element]; //get the template
 	    console.log('thisTemplate: ', thisTemplate);
+
 	    var targetDataStore = thisTemplate.dataStore;
 	    Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
-	    var thisData = Page[targetDataStore].gaurdians;
+
+	    // get the data the belongs to this template
+	    var pageData = Page[targetDataStore].gaurdians;
 	    var targetSelector = thisTemplate.targetContainer;
+
+	    // get the container element
 	    var targetContainer = document.querySelectorAll(targetSelector);
 
-	    thisData.forEach(function (gaurdian) {
-	      targetContainer[0].insertAdjacentHTML('afterbegin', thisTemplate.html);
-	      console.log('gaurdian: ', gaurdian);
+	    // setup an array to store the html collection
+	    var htmlCollection = [];
+
+	    pageData.forEach(function (gaurdian) {
+	      // populate the collection with the template data
+	      htmlCollection.push(thisTemplate.html);
 	    });
+	    targetContainer[0].innerHTML = htmlCollection.join('');
 
 	    // for each row of data, output the matching html template
 

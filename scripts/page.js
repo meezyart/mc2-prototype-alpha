@@ -90,16 +90,25 @@ const Page = {
     console.log('element: ', element);
     let thisTemplate = window.Templates[element]; //get the template
     console.log('thisTemplate: ', thisTemplate);
+
     let targetDataStore = thisTemplate.dataStore;
     Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
-    let thisData = Page[targetDataStore].gaurdians;
+
+    // get the data the belongs to this template
+    let pageData = Page[targetDataStore].gaurdians;
     let targetSelector = thisTemplate.targetContainer;
+
+    // get the container element
     let targetContainer = document.querySelectorAll(targetSelector);
 
-    thisData.forEach(gaurdian => {  
-      targetContainer[0].insertAdjacentHTML( 'afterbegin', thisTemplate.html );
-      console.log('gaurdian: ', gaurdian);
+    // setup an array to store the html collection
+    let htmlCollection = [];
+
+    pageData.forEach(gaurdian => {
+      // populate the collection with the template data
+      htmlCollection.push(thisTemplate.html);
     });
+    targetContainer[0].innerHTML = htmlCollection.join('');
 
     // for each row of data, output the matching html template
 
