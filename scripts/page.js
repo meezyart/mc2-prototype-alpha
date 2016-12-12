@@ -92,27 +92,30 @@ const Page = {
     console.log('thisTemplate: ', thisTemplate);
 
     let targetDataStore = thisTemplate.dataStore;
+
+    // get the JSON data for the selected template
     Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
 
-    // get the data the belongs to this template
+    // store the data the belongs to this template
     let pageData = Page[targetDataStore].gaurdians;
     let targetSelector = thisTemplate.targetContainer;
 
-    // get the container element
+    // get the element container element
     let targetContainer = document.querySelectorAll(targetSelector);
 
     // setup an array to store the html collection
     let htmlCollection = [];
 
+    // 
+    // populate the collection with the template data
+    // 
     pageData.forEach(gaurdian => {
-      // populate the collection with the template data
-      htmlCollection.push(thisTemplate.html);
+      htmlCollection.push(thisTemplate.html(gaurdian));
     });
+
+    // output the html for this template
     targetContainer[0].innerHTML = htmlCollection.join('');
 
-    // for each row of data, output the matching html template
-
-    
     // gather all of the elements with the navbutton attribute
     let navButtons = document.querySelectorAll('[navbutton]');
 

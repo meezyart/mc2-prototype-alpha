@@ -507,7 +507,9 @@
 	var gaurdiansPage = {
 	  targetContainer: '.gaurdian-buttons',
 	  dataStore: 'gaurdianData',
-	  html: '<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdiansDetailPage" navbutton>\n          <div class="gaurdian-buttons__profile-picture" style="background-image: url(\'images/profile-pic-mary.jpg\')"></div>\n          <div class="gaurdian-buttons__gaurdian-name">Mary</div>\n          <div class="gaurdian-buttons__gaurdian-title">Mother</div>\n        </div>'
+	  html: function html(data) {
+	    return '<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdiansDetailPage" navbutton>\n      <div class="gaurdian-buttons__profile-picture" style="background-image: url(\'images/profile-pic-mary.jpg\')"></div>\n      <div class="gaurdian-buttons__gaurdian-name">' + data.firstName + '</div>\n      <div class="gaurdian-buttons__gaurdian-title">Mother</div>\n    </div>';
+	  }
 	};
 
 	// add the template to the Templates object
@@ -616,26 +618,29 @@
 	    console.log('thisTemplate: ', thisTemplate);
 
 	    var targetDataStore = thisTemplate.dataStore;
+
+	    // get the JSON data for the selected template
 	    Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
 
-	    // get the data the belongs to this template
+	    // store the data the belongs to this template
 	    var pageData = Page[targetDataStore].gaurdians;
 	    var targetSelector = thisTemplate.targetContainer;
 
-	    // get the container element
+	    // get the element container element
 	    var targetContainer = document.querySelectorAll(targetSelector);
 
 	    // setup an array to store the html collection
 	    var htmlCollection = [];
 
+	    // 
+	    // populate the collection with the template data
+	    // 
 	    pageData.forEach(function (gaurdian) {
-	      // populate the collection with the template data
-	      htmlCollection.push(thisTemplate.html);
+	      htmlCollection.push(thisTemplate.html(gaurdian));
 	    });
+
+	    // output the html for this template
 	    targetContainer[0].innerHTML = htmlCollection.join('');
-
-	    // for each row of data, output the matching html template
-
 
 	    // gather all of the elements with the navbutton attribute
 	    var navButtons = document.querySelectorAll('[navbutton]');
