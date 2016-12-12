@@ -18,7 +18,7 @@ const Page = {
 
   // get initial json data
   getJson: function(){
-    this.loadXMLDoc("./mock-data/data.json", 'gaurdianData');
+    this.loadXMLDoc('./mock-data/data.json');
   },
 
   // state
@@ -40,15 +40,14 @@ const Page = {
   },
 
   // collect Json data
-  loadXMLDoc: function(url, dataStore) {
+  loadXMLDoc: function(url) {
     let xmlhttp = new XMLHttpRequest();
 
     xmlhttp.onreadystatechange = function() {
       if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
          if (xmlhttp.status == 200) {
-            let getData = JSON.parse(xmlhttp.responseText);
-            console.log('dataStore: ', dataStore);
-            Page[dataStore] = getData;
+            let jsonData = JSON.parse(xmlhttp.responseText);
+            Page.dataStore = jsonData;
          }
          else if (xmlhttp.status == 400) {
             alert('There was an error 400');
@@ -86,17 +85,15 @@ const Page = {
     // reveal the desired page
     console.log('element: ', element);
     document.getElementById(element).classList.remove('is-hidden');
-
-
-    console.log('window.Templates: ', window.Templates);
+    
     // serve the corresponding template(s) for the revealed page
     let thisTemplate = window.Templates[element]; //get the corresponding template
     console.log('thisTemplate: ', thisTemplate);
     let targetDataStore = thisTemplate.dataStore;
-    console.log('targetDataStore: ', typeof(targetDataStore));
+    console.log('targetDataStore: ', targetDataStore);
 
     // get the JSON data for the selected template
-    Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
+    // Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
 
     // grab the prop name for the data tree
     let tableKey = thisTemplate.tableKey;
@@ -106,8 +103,8 @@ const Page = {
       console.warn("there was no tableKey found in this template");
 
     // store the data that belongs to this template
-    console.log('Page[targetDataStore]: ', Page[targetDataStore]);
-    let pageData = Page[targetDataStore][tableKey];
+    let pageData = Page.dataStore[tableKey];
+    console.log('pageData: ', pageData);
     let targetSelector = thisTemplate.targetContainer;
 
     // get the element container element

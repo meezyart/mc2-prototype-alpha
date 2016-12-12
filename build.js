@@ -51,12 +51,12 @@
 	// Templates
 	window.Templates = {}; //set a templates object on the window
 	__webpack_require__(16);
-	__webpack_require__(20);
+	__webpack_require__(17);
 
 	// JS
-	__webpack_require__(17);
 	__webpack_require__(18);
 	__webpack_require__(19);
+	__webpack_require__(20);
 
 /***/ },
 /* 1 */
@@ -523,7 +523,31 @@
 
 	'use strict';
 
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	/*jshint esversion: 6 */
+	//gaurdian-details-list.js
+	// 
+	// Author: Conrad Davis Jr
+	// 
+	// This js file serves a template for the Gaurdians detail page
+	// 
+
+	var childrenPage = {
+	  targetContainer: '.children-buttons',
+	  dataStore: 'childrenData',
+	  tableKey: 'children',
+	  html: function html(data) {
+	    return '<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdiansDetailPage" navbutton>\n      <div class="gaurdian-buttons__profile-picture" style="background-image: ' + data.profilePicture + '"></div>\n      <div class="gaurdian-buttons__gaurdian-name">' + data.firstName + ' ' + data.lastName + '</div>\n      <div class="gaurdian-buttons__gaurdian-title">' + data.gaurdianStatus + '</div>\n    </div>';
+	  }
+	};
+
+	// add the template to the Templates object
+	window.Templates.childrenPage = childrenPage;
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	'use strict';
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
@@ -547,7 +571,7 @@
 
 	  // get initial json data
 	  getJson: function getJson() {
-	    this.loadXMLDoc("./mock-data/data.json", 'gaurdianData');
+	    this.loadXMLDoc('./mock-data/data.json');
 	  },
 
 	  // state
@@ -570,15 +594,14 @@
 	  },
 
 	  // collect Json data
-	  loadXMLDoc: function loadXMLDoc(url, dataStore) {
+	  loadXMLDoc: function loadXMLDoc(url) {
 	    var xmlhttp = new XMLHttpRequest();
 
 	    xmlhttp.onreadystatechange = function () {
 	      if (xmlhttp.readyState == XMLHttpRequest.DONE) {
 	        if (xmlhttp.status == 200) {
-	          var getData = JSON.parse(xmlhttp.responseText);
-	          console.log('dataStore: ', dataStore);
-	          Page[dataStore] = getData;
+	          var jsonData = JSON.parse(xmlhttp.responseText);
+	          Page.dataStore = jsonData;
 	        } else if (xmlhttp.status == 400) {
 	          alert('There was an error 400');
 	        } else {
@@ -617,15 +640,14 @@
 	    console.log('element: ', element);
 	    document.getElementById(element).classList.remove('is-hidden');
 
-	    console.log('window.Templates: ', window.Templates);
 	    // serve the corresponding template(s) for the revealed page
 	    var thisTemplate = window.Templates[element]; //get the corresponding template
 	    console.log('thisTemplate: ', thisTemplate);
 	    var targetDataStore = thisTemplate.dataStore;
-	    console.log('targetDataStore: ', typeof targetDataStore === 'undefined' ? 'undefined' : _typeof(targetDataStore));
+	    console.log('targetDataStore: ', targetDataStore);
 
 	    // get the JSON data for the selected template
-	    Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
+	    // Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
 
 	    // grab the prop name for the data tree
 	    var tableKey = thisTemplate.tableKey;
@@ -634,8 +656,8 @@
 	    if (!tableKey) console.warn("there was no tableKey found in this template");
 
 	    // store the data that belongs to this template
-	    console.log('Page[targetDataStore]: ', Page[targetDataStore]);
-	    var pageData = Page[targetDataStore][tableKey];
+	    var pageData = Page.dataStore[tableKey];
+	    console.log('pageData: ', pageData);
 	    var targetSelector = thisTemplate.targetContainer;
 
 	    // get the element container element
@@ -676,7 +698,7 @@
 	window.Page = Page;
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -764,7 +786,7 @@
 	};
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -847,32 +869,6 @@
 
 	};
 	Welcome.init();
-
-/***/ },
-/* 20 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	/*jshint esversion: 6 */
-	//gaurdian-details-list.js
-	// 
-	// Author: Conrad Davis Jr
-	// 
-	// This js file serves a template for the Gaurdians detail page
-	// 
-
-	var childrenPage = {
-	  targetContainer: '.children-buttons',
-	  dataStore: 'childrenData',
-	  tableKey: 'children',
-	  html: function html(data) {
-	    return '<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdiansDetailPage" navbutton>\n      <div class="gaurdian-buttons__profile-picture" style="background-image: ' + data.profilePicture + '"></div>\n      <div class="gaurdian-buttons__gaurdian-name">' + data.firstName + ' ' + data.lastName + '</div>\n      <div class="gaurdian-buttons__gaurdian-title">' + data.gaurdianStatus + '</div>\n    </div>';
-	  }
-	};
-
-	// add the template to the Templates object
-	window.Templates.childrenPage = childrenPage;
 
 /***/ }
 /******/ ]);
