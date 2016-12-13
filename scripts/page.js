@@ -85,15 +85,12 @@ const Page = {
     // reveal the desired page
     console.log('element: ', element);
     document.getElementById(element).classList.remove('is-hidden');
-    
+
     // serve the corresponding template(s) for the revealed page
     let thisTemplate = window.Templates[element]; //get the corresponding template
     console.log('thisTemplate: ', thisTemplate);
     let targetDataStore = thisTemplate.dataStore;
     console.log('targetDataStore: ', targetDataStore);
-
-    // get the JSON data for the selected template
-    // Page.loadXMLDoc("./mock-data/data.json", targetDataStore);
 
     // grab the prop name for the data tree
     let tableKey = thisTemplate.tableKey;
