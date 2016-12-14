@@ -11,7 +11,7 @@ const gaurdiansPage = {
   dataStore: 'gaurdianData',
   tableKey: 'gaurdians',
   html: (data) => (
-    `<div class="gaurdian-buttons__gaurdian-button" view-path="gaurdiansDetailPage" navbutton>
+    `<div class="gaurdian-buttons__gaurdian-button" user-id="${data.id}" view-path="gaurdianDetails" navbutton>
       <div class="gaurdian-buttons__profile-picture" style="background-image: ${data.profilePicture}"></div>
       <div class="gaurdian-buttons__gaurdian-name">${data.firstName} ${data.lastName}</div>
       <div class="gaurdian-buttons__gaurdian-title">${data.gaurdianStatus}</div>

@@ -35,7 +35,7 @@ const Page = {
   events: () => {
     // listen to all elements with the 'navbutton' attribute on it
     [...Page.profileButtons].forEach(element => element.addEventListener('click', (e) => {
-      Page.changePage(element.getAttribute('view-path'));
+      Page.changePage(e.path[1], element.getAttribute('view-path'));
     }));
   },
 
@@ -77,31 +77,47 @@ const Page = {
   // *TEMPORARY METHODS
   // 
   // this method shows and hides pages with display:none/block
-  changePage: (element) => {
+  changePage: (e, element) => {
 
     // hide all of the pages
     [...Page.container.children].forEach(x => x.classList.add('is-hidden'));
 
     // reveal the desired page
     console.log('element: ', element);
+    console.log('e: ', e);
     document.getElementById(element).classList.remove('is-hidden');
 
     // serve the corresponding template(s) for the revealed page
     let thisTemplate = window.Templates[element]; //get the corresponding template
     console.log('thisTemplate: ', thisTemplate);
-    let targetDataStore = thisTemplate.dataStore;
-    console.log('targetDataStore: ', targetDataStore);
+
+    // if there is a template, save its dataStore
+    if (thisTemplate) {
+      let targetDataStore = thisTemplate.dataStore;
+    }
 
     // grab the prop name for the data tree
     let tableKey = thisTemplate.tableKey;
-    console.log('tableKey: ', tableKey);
 
     if(!tableKey)
       console.warn("there was no tableKey found in this template");
 
     // store the data that belongs to this template
     let pageData = Page.dataStore[tableKey];
-    console.log('pageData: ', pageData);
+
+    // if the element clicked has a user id, store an access point to that object
+    if (e.hasAttribute('user-id')){
+      console.log('user-id: ', e.getAttribute('user-id'));
+    }else{
+      console.log('Nope no user-id');
+    }
+    // pageData.filter(function(item){
+    //   if (item == item.id) {
+    //     return item;
+    //   }
+    // });
+
+    // console.log('additionalDetails: ', additionalDetails);
     let targetSelector = thisTemplate.targetContainer;
 
     // get the element container element
@@ -118,7 +134,12 @@ const Page = {
     });
 
     // output the html for this template
+    // 
     targetContainer[0].innerHTML = htmlCollection.join('');
+
+    // 
+    // Binding elements
+    // 
 
     // gather all of the elements with the navbutton attribute
     let navButtons = document.querySelectorAll('[navbutton]');
@@ -128,7 +149,7 @@ const Page = {
 
     // add a new set of event listeners to the nav buttons 
     navButtons.forEach(element => element.addEventListener('click', (e) => {
-      Page.changePage(element.getAttribute('view-path'));
+      Page.changePage(e.path[1], element.getAttribute('view-path'));
     }));
 
   }
