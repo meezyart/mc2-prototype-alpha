@@ -51,13 +51,13 @@
 	// Templates
 	window.Templates = {}; //set a templates object on the window
 	__webpack_require__(16);
-	__webpack_require__(21);
 	__webpack_require__(17);
+	__webpack_require__(18);
 
 	// JS
-	__webpack_require__(18);
 	__webpack_require__(19);
 	__webpack_require__(20);
+	__webpack_require__(21);
 
 /***/ },
 /* 1 */
@@ -529,6 +529,32 @@
 	// 
 	// Author: Conrad Davis Jr
 	// 
+	// This js file serves a template for the Gaurdians detailed page
+	// 
+
+	var gaurdianDetails = {
+	  targetContainer: '.gaurdian-details',
+	  dataStore: 'gaurdianDetailsData',
+	  tableKey: 'gaurdians',
+	  html: function html(data) {
+	    return '\n    <div class="gaurdian-details__details-row">\n      <div class="gaurdian-details__category">Profession</div>\n      <div class="gaurdian-details__info"><input placeholder="English Teacher"></div>\n    </div>\n    ';
+	  }
+	};
+
+	// add the template to the Templates object
+	window.Templates.gaurdianDetails = gaurdianDetails;
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/*jshint esversion: 6 */
+	//gaurdian-details-list.js
+	// 
+	// Author: Conrad Davis Jr
+	// 
 	// This js file serves a template for the Gaurdians detail page
 	// 
 
@@ -545,7 +571,7 @@
 	window.Templates.childrenPage = childrenPage;
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -652,26 +678,12 @@
 	    }
 
 	    // grab the prop name for the data tree
-	    var tableKey = thisTemplate.tableKey;
-
 	    if (!tableKey) console.warn("there was no tableKey found in this template");
+	    var tableKey = thisTemplate.tableKey;
 
 	    // store the data that belongs to this template
 	    var pageData = Page.dataStore[tableKey];
 
-	    // if the element clicked has a user id, store an access point to that object
-	    if (e.hasAttribute('user-id')) {
-	      console.log('user-id: ', e.getAttribute('user-id'));
-	    } else {
-	      console.log('Nope no user-id');
-	    }
-	    // pageData.filter(function(item){
-	    //   if (item == item.id) {
-	    //     return item;
-	    //   }
-	    // });
-
-	    // console.log('additionalDetails: ', additionalDetails);
 	    var targetSelector = thisTemplate.targetContainer;
 
 	    // get the element container element
@@ -679,6 +691,17 @@
 
 	    // setup an array to store the html collection
 	    var htmlCollection = [];
+
+	    // if the element clicked has a user id, store an access point to that object
+	    if (e.hasAttribute('user-id')) {
+	      var additionalDetails = pageData.filter(function (item) {
+	        if (item.id == e.getAttribute('user-id')) {
+	          return item;
+	        }
+	      });
+	    } else {
+	      console.log('Nope no user-id');
+	    }
 
 	    // 
 	    // populate the collection with the template data
@@ -717,7 +740,7 @@
 	window.Page = Page;
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -805,7 +828,7 @@
 	};
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -888,32 +911,6 @@
 
 	};
 	Welcome.init();
-
-/***/ },
-/* 21 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	/*jshint esversion: 6 */
-	//gaurdian-details-list.js
-	// 
-	// Author: Conrad Davis Jr
-	// 
-	// This js file serves a template for the Gaurdians detailed page
-	// 
-
-	var gaurdianDetails = {
-	  targetContainer: '.gaurdian-details',
-	  dataStore: 'gaurdianDetailsData',
-	  tableKey: 'gaurdians',
-	  html: function html(data) {
-	    return '\n    <div class="gaurdian-details__details-row">\n      <div class="gaurdian-details__category">Profession</div>\n      <div class="gaurdian-details__info"><input placeholder="English Teacher"></div>\n    </div>\n    ';
-	  }
-	};
-
-	// add the template to the Templates object
-	window.Templates.gaurdianDetails = gaurdianDetails;
 
 /***/ }
 /******/ ]);

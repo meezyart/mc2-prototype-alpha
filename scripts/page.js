@@ -97,27 +97,13 @@ const Page = {
     }
 
     // grab the prop name for the data tree
-    let tableKey = thisTemplate.tableKey;
-
     if(!tableKey)
       console.warn("there was no tableKey found in this template");
+    let tableKey = thisTemplate.tableKey;
 
     // store the data that belongs to this template
     let pageData = Page.dataStore[tableKey];
 
-    // if the element clicked has a user id, store an access point to that object
-    if (e.hasAttribute('user-id')){
-      console.log('user-id: ', e.getAttribute('user-id'));
-    }else{
-      console.log('Nope no user-id');
-    }
-    // pageData.filter(function(item){
-    //   if (item == item.id) {
-    //     return item;
-    //   }
-    // });
-
-    // console.log('additionalDetails: ', additionalDetails);
     let targetSelector = thisTemplate.targetContainer;
 
     // get the element container element
@@ -126,6 +112,17 @@ const Page = {
     // setup an array to store the html collection
     let htmlCollection = [];
 
+    // if the element clicked has a user id, store an access point to that object
+    if (e.hasAttribute('user-id')){
+      var additionalDetails = pageData.filter(function(item){
+        if (item.id == e.getAttribute('user-id')) {
+          return item;
+        }
+      });
+    }else{
+      console.log('Nope no user-id');
+    }
+    
     // 
     // populate the collection with the template data
     // 
