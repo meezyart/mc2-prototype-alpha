@@ -538,7 +538,7 @@
 
 	var gaurdianDetails = {
 	  targetContainer: '.gaurdian-details',
-	  secondaryTarget: '.gaurdian-profile',
+	  secondaryTarget: '.gaurdianDetails__profile-container',
 	  dataStore: 'gaurdianDetailsData',
 	  tableKey: 'gaurdians',
 	  html: function html(data) {
@@ -695,7 +695,6 @@
 
 	    // get the element that will serve as container for the template
 	    var targetContainer = document.querySelectorAll(thisTemplate.targetContainer);
-	    var secondaryTargetSelector = document.querySelectorAll(thisTemplate.secondaryTarget);
 
 	    // setup an array to store the html collection
 	    var htmlCollection = [];
@@ -703,7 +702,6 @@
 	    // output the html for this template
 	    // 
 
-	    var secondaryData;
 	    // if the element clicked has a user id, store an access point to that object
 	    if (e.hasAttribute('user-id')) {
 	      var userMatch = pageData.filter(function (item) {
@@ -712,8 +710,13 @@
 	        }
 	      });
 	      // populate the collection with the template data
-	      secondaryData = userMatch[0];
+	      console.log('userMatch[0]: ', userMatch[0]);
+	      var secondaryData = userMatch[0];
 	      var detailItems = userMatch[0].additionalDetails;
+
+	      var secondaryTargetSelector = document.querySelectorAll(thisTemplate.secondaryTarget);
+
+	      secondaryTargetSelector[0].innerHTML = thisTemplate.secondaryHtml(secondaryData);
 
 	      // populate the collection array with the details data
 	      detailItems.forEach(function (detailitem) {
@@ -724,12 +727,10 @@
 	      pageData.forEach(function (gaurdian) {
 	        htmlCollection.push(thisTemplate.html(gaurdian));
 	      });
-	      // output the standard htmlCollection
 	    }
 
+	    // output the standard htmlCollection
 	    targetContainer[0].innerHTML = htmlCollection.join('');
-	    // if (secondaryTargetSelector)  
-	    //   secondaryTargetSelector.innerHTML = thisTemplate.html(secondaryData)
 
 	    // 
 	    // Binding elements

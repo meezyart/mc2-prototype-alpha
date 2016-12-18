@@ -107,7 +107,6 @@ const Page = {
 
     // get the element that will serve as container for the template
     let targetContainer = document.querySelectorAll(thisTemplate.targetContainer);
-    let secondaryTargetSelector = document.querySelectorAll(thisTemplate.secondaryTarget);
 
     // setup an array to store the html collection
     let htmlCollection = [];
@@ -115,7 +114,6 @@ const Page = {
     // output the html for this template
     // 
 
-    var secondaryData
     // if the element clicked has a user id, store an access point to that object
     if (e.hasAttribute('user-id')){
       let userMatch = pageData.filter(function(item){
@@ -124,8 +122,13 @@ const Page = {
         }
       });
       // populate the collection with the template data
-      secondaryData = userMatch[0];
+      console.log('userMatch[0]: ', userMatch[0]);
+      let secondaryData = userMatch[0];
       let detailItems = userMatch[0].additionalDetails;
+
+      let secondaryTargetSelector = document.querySelectorAll(thisTemplate.secondaryTarget);
+
+      secondaryTargetSelector[0].innerHTML = thisTemplate.secondaryHtml(secondaryData);
 
       // populate the collection array with the details data
       detailItems.forEach(detailitem => {
@@ -136,12 +139,11 @@ const Page = {
       pageData.forEach(gaurdian => {
         htmlCollection.push(thisTemplate.html(gaurdian));
       });
-      // output the standard htmlCollection
+      
     }
 
+    // output the standard htmlCollection
     targetContainer[0].innerHTML = htmlCollection.join('');
-    // if (secondaryTargetSelector)  
-    //   secondaryTargetSelector.innerHTML = thisTemplate.html(secondaryData)
 
     // 
     // Binding elements
