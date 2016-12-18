@@ -8,11 +8,11 @@
       "gaurdianStatus": "Mother",
       "profilePicture": "url('images/profile-pic-mary.jpg')",
       "additionalDetails": [
-        {"profession": "English Teacher"},
-        {"professkion": "English Teacher"},
-        {"professsion": "English Teacher"},
-        {"profeswsion": "English Teacher"},
-        {"profeswsion": "English Teacher"}
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"}
       ]
     },
     {
@@ -21,13 +21,13 @@
       "lastName": "Jefferson",
       "gaurdianStatus": "Father",
       "profilePicture": "",
-      "additionalDetails": {
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher"
-      }
+      "additionalDetails": [
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"}
+      ]
     },
     {
       "id": 123,
@@ -35,13 +35,13 @@
       "lastName": "Jefferson",
       "gaurdianStatus": "Father",
       "profilePicture": "",
-      "additionalDetails": {
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher"
-      }
+      "additionalDetails": [
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"}
+      ]
     }
   ],
   "children": [
@@ -50,26 +50,26 @@
       "firstName": "Travissss",
       "lastName": "Jefferson",
       "profilePicture": "url('images/travis-profile.jpg')",
-      "additionalDetails": {
-        "profession": "English Teacher",
-        "professdion": "Englddish Teacher",
-        "professfion": "Engllish Teacher",
-        "profesesfion": "Englikksh Teacher",
-        "professeion": "Englijsh Teacher"
-      }
+      "additionalDetails": [
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"}
+      ]
     },
     {
       "id": 1235,
       "firstName": "Samara",
       "lastName": "Jefferson",
       "profilePicture": "",
-      "additionalDetails": {
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher"
-      }
+      "additionalDetails": [
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"}
+      ]
     }
   ]
 }

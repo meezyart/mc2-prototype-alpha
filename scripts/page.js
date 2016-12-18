@@ -126,21 +126,12 @@ const Page = {
         }
       });
       // populate the collection with the template data
-      console.log('userMatch[0].additionalDetails: ', userMatch[0].additionalDetails);
       let detailItems = userMatch[0].additionalDetails;
-      console.log('detailItems: ', detailItems);
-      console.log('Object(detailItems): ', Object(detailItems));
-      detailItems.forEach(function(key) {
-        var value = key;
-        console.log('value: ', value);
+
+      detailItems.forEach(detailitem => {
+        console.log('detailitem: ', detailitem);
+        htmlCollection.push(thisTemplate.html(detailitem));
       });
-      for (var property in detailItems) {
-        if (detailItems.hasOwnProperty(property)) {
-          console.log('currentItem: ', currentItem);
-          htmlCollection.push(thisTemplate.html(gaurdian));
-          console.log(property + " -> " + detailItems[property]);
-        }
-      }
       // [...detailItems].forEach(item => {
       //   console.log('item: ', item);
       // })
@@ -155,9 +146,9 @@ const Page = {
         htmlCollection.push(thisTemplate.html(gaurdian));
       });
       // output the standard htmlCollection
-      targetContainer[0].innerHTML = htmlCollection.join('');
     }
 
+    targetContainer[0].innerHTML = htmlCollection.join('');
 
     // 
     // Binding elements

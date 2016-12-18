@@ -13,8 +13,8 @@ const gaurdianDetails = {
   html: (data) => (
     `
     <div class="gaurdian-details__details-row">
-      <div class="gaurdian-details__category">Profession</div>
-      <div class="gaurdian-details__info"><input placeholder="English Teacher"></div>
+      <div class="gaurdian-details__category">${data.category}</div>
+      <div class="gaurdian-details__info"><input placeholder="${data.answer}"></div>
     </div>
     `
   )
