@@ -29,7 +29,7 @@ const gaurdianDetails = {
           <div class="gaurdian-profile__gaurdian-title">${data.gaurdianStatus}</div>
         </div>
       </section>
-      <div class="gaurdian-profile__edit" user-id="${data.id}"><span class="button" view-path="gaurdiansDetailsEdit" navbutton>Edit</span></div>
+      <div class="gaurdian-profile__edit" user-id="${data.id}"><span class="button" view-path="gaurdianDetailsEdit" navbutton>Edit</span></div>
     `
   )
 };

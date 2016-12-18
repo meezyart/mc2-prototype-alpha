@@ -56,13 +56,13 @@
 	window.Templates = {}; //set a templates object on the window
 	__webpack_require__(16);
 	__webpack_require__(17);
-	__webpack_require__(22);
 	__webpack_require__(18);
+	__webpack_require__(19);
 
 	// JS
-	__webpack_require__(19);
 	__webpack_require__(20);
 	__webpack_require__(21);
+	__webpack_require__(22);
 
 /***/ },
 /* 1 */
@@ -546,7 +546,7 @@
 	    return '\n    <div class="gaurdian-details__details-row">\n      <div class="gaurdian-details__category">' + data.category + '</div>\n      <div class="gaurdian-details__info">' + data.answer + '</div>\n    </div>\n    ';
 	  },
 	  secondaryHtml: function secondaryHtml(data) {
-	    return '\n      <div class="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - ' + data.firstName + '</div>\n      <section class="gaurdian-profile">\n        <div class="gaurdian-profile__profile-picture" style="background-image: ' + data.profilePicture + '"></div>\n        <div class="gaurdian-profile__information">\n          <div class="gaurdian-profile__gaurdian-name">' + data.firstName + ' ' + data.lastName + '</div>\n          <div class="gaurdian-profile__gaurdian-title">' + data.gaurdianStatus + '</div>\n        </div>\n      </section>\n      <div class="gaurdian-profile__edit" user-id="' + data.id + '"><span class="button" view-path="gaurdiansDetailsEdit" navbutton>Edit</span></div>\n    ';
+	    return '\n      <div class="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - ' + data.firstName + '</div>\n      <section class="gaurdian-profile">\n        <div class="gaurdian-profile__profile-picture" style="background-image: ' + data.profilePicture + '"></div>\n        <div class="gaurdian-profile__information">\n          <div class="gaurdian-profile__gaurdian-name">' + data.firstName + ' ' + data.lastName + '</div>\n          <div class="gaurdian-profile__gaurdian-title">' + data.gaurdianStatus + '</div>\n        </div>\n      </section>\n      <div class="gaurdian-profile__edit" user-id="' + data.id + '"><span class="button" view-path="gaurdianDetailsEdit" navbutton>Edit</span></div>\n    ';
 	  }
 	};
 
@@ -555,6 +555,36 @@
 
 /***/ },
 /* 18 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/*jshint esversion: 6 */
+	//gaurdian-details-list.js
+	// 
+	// Author: Conrad Davis Jr
+	// 
+	// This js file serves a template for the Gaurdians detailed page (EDIT)
+	// 
+
+	var gaurdianDetailsEdit = {
+	  targetContainer: '.gaurdian-details',
+	  secondaryTarget: '.gaurdianDetailsEdit__profile-container',
+	  dataStore: 'gaurdianDetailsData',
+	  tableKey: 'gaurdians',
+	  html: function html(data) {
+	    return '\n    <div class="gaurdian-details__details-row">\n      <div class="gaurdian-details__category">' + data.category + '</div>\n      <div class="gaurdian-details__info"><input placeholder="' + data.answer + '"></div>\n    </div>\n    ';
+	  },
+	  secondaryHtml: function secondaryHtml(data) {
+	    return '\n      <div class="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - ' + data.firstName + '</div>\n      <section class="gaurdian-profile">\n        <div class="gaurdian-profile__profile-picture" style="background-image: ' + data.profilePicture + '"></div>\n        <div class="gaurdian-profile__information">\n          <div class="gaurdian-profile__gaurdian-name">' + data.firstName + ' ' + data.lastName + '</div>\n          <div class="gaurdian-profile__gaurdian-title">' + data.gaurdianStatus + '</div>\n        </div>\n      </section>\n      <div class="gaurdian-profile__edit"><span class="button" user-id="' + data.id + '" view-path="gaurdianDetailPageEdit" navbutton>Edit</span></div>\n    ';
+	  }
+	};
+
+	// add the template to the Templates object
+	window.Templates.gaurdianDetailsEdit = gaurdianDetailsEdit;
+
+/***/ },
+/* 19 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -580,7 +610,7 @@
 	window.Templates.childrenPage = childrenPage;
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -759,7 +789,7 @@
 	window.Page = Page;
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -847,7 +877,7 @@
 	};
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -930,36 +960,6 @@
 
 	};
 	Welcome.init();
-
-/***/ },
-/* 22 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	/*jshint esversion: 6 */
-	//gaurdian-details-list.js
-	// 
-	// Author: Conrad Davis Jr
-	// 
-	// This js file serves a template for the Gaurdians detailed page
-	// 
-
-	var gaurdianDetailsEdit = {
-	  targetContainer: '.gaurdian-details',
-	  secondaryTarget: '.gaurdianDetailsEdit__profile-container',
-	  dataStore: 'gaurdianDetailsData',
-	  tableKey: 'gaurdians',
-	  html: function html(data) {
-	    return '\n    <div class="gaurdian-details__details-row">\n      <div class="gaurdian-details__category">' + data.category + '</div>\n      <div class="gaurdian-details__info">' + data.answer + '</div>\n    </div>\n    ';
-	  },
-	  secondaryHtml: function secondaryHtml(data) {
-	    return '\n      <div class="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - ' + data.firstName + '</div>\n      <section class="gaurdian-profile">\n        <div class="gaurdian-profile__profile-picture" style="background-image: ' + data.profilePicture + '"></div>\n        <div class="gaurdian-profile__information">\n          <div class="gaurdian-profile__gaurdian-name">' + data.firstName + ' ' + data.lastName + '</div>\n          <div class="gaurdian-profile__gaurdian-title">' + data.gaurdianStatus + '</div>\n        </div>\n      </section>\n      <div class="gaurdian-profile__edit"><span class="button" user-id="' + data.id + '" view-path="gaurdiansDetailPageEdit" navbutton>Edit</span></div>\n    ';
-	  }
-	};
-
-	// add the template to the Templates object
-	window.Templates.gaurdianDetailsEdit = gaurdianDetailsEdit;
 
 /***/ }
 /******/ ]);
