@@ -132,7 +132,6 @@
           </div>
         </section>
       </div>
-      <div class="gaurdian-profile__edit"><span class="button" view-path="gaurdiansDetailPageEdit" navbutton>Edit</span></div>
       <section class="gaurdian-details">
         <div class="gaurdian-details__details-row">
           <div class="gaurdian-details__category">Profession</div>
@@ -148,26 +147,28 @@
     <!-- 
     Gaurdians Detail Page Edit
     -->
-    <div id="gaurdiansDetailPageEdit" class="is-hidden">
-      <div class="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - Mary</div>
-      <section class="gaurdian-profile">
-        <div class="gaurdian-profile__profile-picture" style="background-image: url('images/profile-pic-mary.jpg')"></div>
-        <div class="gaurdian-profile__information">
-          <div class="gaurdian-profile__gaurdian-name">
-            <div class="first-name">
-              <label>First name</label>
-              <input placeholder="Mary">
-            </div>
-            <div class="last-name">
-              <label>Last name</label>
-              <input placeholder="Jefferson">
+    <div id="gaurdiansDetailsEdit" class="is-hidden">
+      <div class="gaurdianDetailsEdit__profile-container">
+        <div class="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - Mary</div>
+        <section class="gaurdian-profile">
+          <div class="gaurdian-profile__profile-picture" style="background-image: url('images/profile-pic-mary.jpg')"></div>
+          <div class="gaurdian-profile__information">
+            <div class="gaurdian-profile__gaurdian-name">
+              <div class="first-name">
+                <label>First name</label>
+                <input placeholder="Mary">
+              </div>
+              <div class="last-name">
+                <label>Last name</label>
+                <input placeholder="Jefferson">
+              </div>
             </div>
           </div>
+        </section>
+        <div class="gaurdian-profile__edit">
+          <span class="editing">Editing</span> 
+          <span class="button button--save">Save</span><span class="button button--cancel" view-path="gaurdiansDetailPage" navbutton>Cancel</span>
         </div>
-      </section>
-      <div class="gaurdian-profile__edit">
-        <span class="editing">Editing</span> 
-        <span class="button button--save">Save</span><span class="button button--cancel" view-path="gaurdiansDetailPage" navbutton>Cancel</span>
       </div>
       <section class="gaurdian-details">
         <div class="gaurdian-details__details-row">

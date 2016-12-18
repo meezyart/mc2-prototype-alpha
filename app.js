@@ -8,6 +8,7 @@ require('./styles/sass/style.sass');
 window.Templates = {}; //set a templates object on the window
 require('./scripts/templates/gaurdian-page-list.js');
 require('./scripts/templates/gaurdian-details-list.js');
+require('./scripts/templates/gaurdian-details-edit-list.js');
 require('./scripts/templates/children-page-list.js');
 
 // JS

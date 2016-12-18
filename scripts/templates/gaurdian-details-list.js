@@ -21,14 +21,15 @@ const gaurdianDetails = {
   ),
   secondaryHtml: (data) => (
     `
-    <div class="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - ${data.firstName}</div>
-    <section class="gaurdian-profile">
-      <div class="gaurdian-profile__profile-picture" style="background-image: ${data.profilePicture}"></div>
-      <div class="gaurdian-profile__information">
-        <div class="gaurdian-profile__gaurdian-name">${data.firstName} ${data.lastName}</div>
-        <div class="gaurdian-profile__gaurdian-title">${data.gaurdianStatus}</div>
-      </div>
-    </section>
+      <div class="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - ${data.firstName}</div>
+      <section class="gaurdian-profile">
+        <div class="gaurdian-profile__profile-picture" style="background-image: ${data.profilePicture}"></div>
+        <div class="gaurdian-profile__information">
+          <div class="gaurdian-profile__gaurdian-name">${data.firstName} ${data.lastName}</div>
+          <div class="gaurdian-profile__gaurdian-title">${data.gaurdianStatus}</div>
+        </div>
+      </section>
+      <div class="gaurdian-profile__edit" user-id="${data.id}"><span class="button" view-path="gaurdiansDetailsEdit" navbutton>Edit</span></div>
     `
   )
 };
