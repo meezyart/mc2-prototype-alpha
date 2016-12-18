@@ -8,6 +8,7 @@
 
 const gaurdianDetails = {
   targetContainer: '.gaurdian-details',
+  secondaryTarget: '.gaurdian-profile',
   dataStore: 'gaurdianDetailsData',
   tableKey: 'gaurdians',
   html: (data) => (
@@ -16,6 +17,18 @@ const gaurdianDetails = {
       <div class="gaurdian-details__category">${data.category}</div>
       <div class="gaurdian-details__info">${data.answer}</div>
     </div>
+    `
+  ),
+  secondaryHtml: (data) => (
+    `
+    <div class="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - ${data.firstName}</div>
+    <section class="gaurdian-profile">
+      <div class="gaurdian-profile__profile-picture" style="background-image: ${data.profilePicture}"></div>
+      <div class="gaurdian-profile__information">
+        <div class="gaurdian-profile__gaurdian-name">${data.firstName} ${data.lastName}</div>
+        <div class="gaurdian-profile__gaurdian-title">${data.gaurdianStatus}</div>
+      </div>
+    </section>
     `
   )
 };

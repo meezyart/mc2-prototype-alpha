@@ -538,10 +538,14 @@
 
 	var gaurdianDetails = {
 	  targetContainer: '.gaurdian-details',
+	  secondaryTarget: '.gaurdian-profile',
 	  dataStore: 'gaurdianDetailsData',
 	  tableKey: 'gaurdians',
 	  html: function html(data) {
 	    return '\n    <div class="gaurdian-details__details-row">\n      <div class="gaurdian-details__category">' + data.category + '</div>\n      <div class="gaurdian-details__info">' + data.answer + '</div>\n    </div>\n    ';
+	  },
+	  secondaryHtml: function secondaryHtml(data) {
+	    return '\n    <div class="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - ' + data.firstName + '</div>\n    <section class="gaurdian-profile">\n      <div class="gaurdian-profile__profile-picture" style="background-image: ' + data.profilePicture + '"></div>\n      <div class="gaurdian-profile__information">\n        <div class="gaurdian-profile__gaurdian-name">' + data.firstName + ' ' + data.lastName + '</div>\n        <div class="gaurdian-profile__gaurdian-title">' + data.gaurdianStatus + '</div>\n      </div>\n    </section>\n    ';
 	  }
 	};
 
@@ -688,12 +692,10 @@
 
 	    // store the data that belongs to this template
 	    var pageData = Page.dataStore[tableKey];
-	    console.log('pageData: ', pageData);
 
-	    var targetSelector = thisTemplate.targetContainer;
-
-	    // get the element container element
-	    var targetContainer = document.querySelectorAll(targetSelector);
+	    // get the element that will serve as container for the template
+	    var targetContainer = document.querySelectorAll(thisTemplate.targetContainer);
+	    var secondaryTargetSelector = document.querySelectorAll(thisTemplate.secondaryTarget);
 
 	    // setup an array to store the html collection
 	    var htmlCollection = [];
@@ -701,16 +703,17 @@
 	    // output the html for this template
 	    // 
 
-	    var userMatch = void 0;
+	    var secondaryData;
 	    // if the element clicked has a user id, store an access point to that object
 	    if (e.hasAttribute('user-id')) {
-	      var _userMatch = pageData.filter(function (item) {
+	      var userMatch = pageData.filter(function (item) {
 	        if (item.id == e.getAttribute('user-id')) {
 	          return item;
 	        }
 	      });
 	      // populate the collection with the template data
-	      var detailItems = _userMatch[0].additionalDetails;
+	      secondaryData = userMatch[0];
+	      var detailItems = userMatch[0].additionalDetails;
 
 	      // populate the collection array with the details data
 	      detailItems.forEach(function (detailitem) {
@@ -725,6 +728,8 @@
 	    }
 
 	    targetContainer[0].innerHTML = htmlCollection.join('');
+	    // if (secondaryTargetSelector)  
+	    //   secondaryTargetSelector.innerHTML = thisTemplate.html(secondaryData)
 
 	    // 
 	    // Binding elements
