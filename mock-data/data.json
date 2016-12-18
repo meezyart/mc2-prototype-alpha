@@ -7,13 +7,13 @@
       "lastName": "Jefferson",
       "gaurdianStatus": "Mother",
       "profilePicture": "url('images/profile-pic-mary.jpg')",
-      "additionalDetails": {
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher",
-        "profession": "English Teacher"
-      }
+      "additionalDetails": [
+        {"profession": "English Teacher"},
+        {"professkion": "English Teacher"},
+        {"professsion": "English Teacher"},
+        {"profeswsion": "English Teacher"},
+        {"profeswsion": "English Teacher"}
+      ]
     },
     {
       "id": 123,

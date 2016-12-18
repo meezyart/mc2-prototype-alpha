@@ -1,6 +1,8 @@
-
+// styles
 require('./styles/sass/style.sass');
 
+// ext libraries
+// const $ = require('jQuery');
 
 // Templates
 window.Templates = {}; //set a templates object on the window
