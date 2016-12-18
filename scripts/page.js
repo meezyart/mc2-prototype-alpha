@@ -128,18 +128,10 @@ const Page = {
       // populate the collection with the template data
       let detailItems = userMatch[0].additionalDetails;
 
+      // populate the collection array with the details data
       detailItems.forEach(detailitem => {
-        console.log('detailitem: ', detailitem);
         htmlCollection.push(thisTemplate.html(detailitem));
       });
-      // [...detailItems].forEach(item => {
-      //   console.log('item: ', item);
-      // })
-      // pageData.forEach(gaurdian => {additionalDetails[0].additionalDetails
-      //   htmlCollection.push(thisTemplate.html(gaurdian));
-      // });
-      // // output the standard additionalDetails
-      // targetContainer[0].innerHTML = .join('');
     }else{
       // populate the collection with the template data
       pageData.forEach(gaurdian => {

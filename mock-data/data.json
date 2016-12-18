@@ -9,10 +9,11 @@
       "profilePicture": "url('images/profile-pic-mary.jpg')",
       "additionalDetails": [
         {"category": "profession", "answer": "English Teacher"},
-        {"category": "profession", "answer": "English Teacher"},
-        {"category": "profession", "answer": "English Teacher"},
-        {"category": "profession", "answer": "English Teacher"},
-        {"category": "profession", "answer": "English Teacher"}
+        {"category": "phone", "answer": "123-456-7891"},
+        {"category": "email", "answer": "gaurdian@email.com"},
+        {"category": "address", "answer": "mc2 St"},
+        {"category": "skills", "answer": "dance, baking, programming"},
+        {"category": "language", "answer": "english, spanish"}
       ]
     },
     {
@@ -37,10 +38,11 @@
       "profilePicture": "",
       "additionalDetails": [
         {"category": "profession", "answer": "English Teacher"},
-        {"category": "profession", "answer": "English Teacher"},
-        {"category": "profession", "answer": "English Teacher"},
-        {"category": "profession", "answer": "English Teacher"},
-        {"category": "profession", "answer": "English Teacher"}
+        {"category": "phone", "answer": "123-456-7891"},
+        {"category": "email", "answer": "gaurdian@email.com"},
+        {"category": "address", "answer": "mc2 St"},
+        {"category": "skills", "answer": "dance, baking, programming"},
+        {"category": "language", "answer": "english, spanish"}
       ]
     }
   ],

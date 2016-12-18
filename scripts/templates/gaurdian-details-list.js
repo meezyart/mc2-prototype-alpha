@@ -14,7 +14,7 @@ const gaurdianDetails = {
     `
     <div class="gaurdian-details__details-row">
       <div class="gaurdian-details__category">${data.category}</div>
-      <div class="gaurdian-details__info"><input placeholder="${data.answer}"></div>
+      <div class="gaurdian-details__info">${data.answer}</div>
     </div>
     `
   )
