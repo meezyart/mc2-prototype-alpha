@@ -97,9 +97,6 @@ const Page = {
     }
 
     // grab the prop name for the data tree
-    if(!tableKey)
-      console.warn("there was no tableKey found in this template");
-
     let tableKey = thisTemplate.tableKey;
 
     // store the data that belongs to this template

@@ -13,7 +13,7 @@ const gaurdianDetails = {
   tableKey: 'gaurdians',
   html: (data) => (
     `
-    <div class="gaurdian-details__details-row">
+    <div class="gaurdianDetails__details-row">
       <div class="gaurdian-details__category">${data.category}</div>
       <div class="gaurdian-details__info">${data.answer}</div>
     </div>

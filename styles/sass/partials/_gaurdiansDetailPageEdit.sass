@@ -1,7 +1,7 @@
 // Gaurdians Page styles
 // 
 
-#gaurdiansDetailsEdit
+#gaurdianDetailsEdit
   background-color: $color-gray-pale
   background-size: cover
   position: relative
@@ -51,9 +51,9 @@
 
   .gaurdian-profile
     @include justify-content(center)
-    align-items: flex-start
+    align-items: center
     margin-bottom: 1em
-    padding: 1em 1em 0
+    padding: 0.5em 1em 0
     display: flex
     .first-name,
     .last-name
@@ -126,12 +126,13 @@
       font-weight: bold  
       font-size: 0.7em
 
-  .gaurdianDetailsEdit__gaurdian-details
-    -webkit-font-smoothing: antialiased
-    color: $color-gray-medium
-    padding-top: 2em
+  .gaurdianDetailsEdit
+    &__gaurdian-details
+      -webkit-font-smoothing: antialiased
+      color: $color-gray-medium
+      padding: 2em
     &__details-row
-      justify-content: space-around
+      justify-content: space-between
       align-items: center
       margin-bottom: 1em
       display: flex
