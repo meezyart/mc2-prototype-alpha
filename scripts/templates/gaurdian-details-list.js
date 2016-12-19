@@ -7,7 +7,7 @@
 // 
 
 const gaurdianDetails = {
-  targetContainer: '.gaurdian-details',
+  targetContainer: '.gaurdianDetails__gaurdian-details',
   secondaryTarget: '.gaurdianDetails__profile-container',
   dataStore: 'gaurdianDetailsData',
   tableKey: 'gaurdians',
