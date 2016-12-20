@@ -647,6 +647,7 @@
 	    this.container = document.getElementById('page');
 	    this.bodyElement = document.querySelector('body');
 	    this.profileButtons = document.querySelectorAll('[navbutton]');
+	    this.pageItems = document.querySelectorAll('[pageItem]');
 	  },
 
 	  // event listeners
@@ -698,6 +699,7 @@
 	  changePage: function changePage(e, element) {
 
 	    // hide all of the pages
+	    console.log('Page.pageItems: ', Page.pageItems);
 	    [].concat(_toConsumableArray(Page.container.children)).forEach(function (x) {
 	      return x.classList.add('is-hidden');
 	    });
@@ -722,7 +724,7 @@
 	    // store the data that belongs to this template
 	    var pageData = Page.dataStore[tableKey];
 
-	    // get the element that will serve as container for the template
+	    // get the element that will serve as the container for the template
 	    var targetContainer = document.querySelectorAll(thisTemplate.targetContainer);
 
 	    // setup an array to store the html collection

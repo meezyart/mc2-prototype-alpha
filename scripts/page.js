@@ -29,6 +29,7 @@ const Page = {
     this.container = document.getElementById('page');
     this.bodyElement = document.querySelector('body');
     this.profileButtons = document.querySelectorAll('[navbutton]');
+    this.pageItems = document.querySelectorAll('[pageItem]');
   },
 
   // event listeners
@@ -80,6 +81,7 @@ const Page = {
   changePage: (e, element) => {
 
     // hide all of the pages
+    console.log('Page.pageItems: ', Page.pageItems);
     [...Page.container.children].forEach(x => x.classList.add('is-hidden'));
 
     // reveal the desired page
@@ -102,7 +104,7 @@ const Page = {
     // store the data that belongs to this template
     let pageData = Page.dataStore[tableKey];
 
-    // get the element that will serve as container for the template
+    // get the element that will serve as the container for the template
     let targetContainer = document.querySelectorAll(thisTemplate.targetContainer);
 
     // setup an array to store the html collection
@@ -148,7 +150,7 @@ const Page = {
 
     // gather all of the elements with the navbutton attribute
     let navButtons = document.querySelectorAll('[navbutton]');
-
+    
     // unbind the event listeners for the nav buttons
     navButtons.forEach(element => element.removeEventListener('click', (e) => {}));
 
