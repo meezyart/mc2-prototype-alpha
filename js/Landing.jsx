@@ -4,7 +4,7 @@ const { Link } = require('react-router')
 const Landing = () => (
   <div id="profilePage" className="is-hidden" pageItem>
     <div className="profile-buttons">
-      <Link to='/search' className="profile-button" view-path="gaurdiansPage" navbutton>
+      <Link to='/gaurdians' className="profile-button" view-path="gaurdiansPage" navbutton>
         <div className="profile-icon gaurdians"></div>
         <div className="icon-name">Gaurdians</div>
       </Link>
