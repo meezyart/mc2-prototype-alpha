@@ -8,6 +8,10 @@ const Landing = () => (
         <div className="profile-icon gaurdians"></div>
         <div className="icon-name">Gaurdians</div>
       </Link>
+      <Link to='/search' className="profile-button" view-path="gaurdiansPage" navbutton>
+        <div className="profile-icon gaurdians"></div>
+        <div className="icon-name">Search</div>
+      </Link>
       <div className="profile-button" view-path="childrenPage" navbutton>
         <div className="profile-icon children"></div>
         <div className="icon-name">Children</div>
