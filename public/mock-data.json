@@ -1,0 +1,77 @@
+{
+  "acct-id": 18837736,
+  "gaurdians": [
+    {
+      "id": 12,
+      "firstName": "Maryyy",
+      "lastName": "Jeffersonnnn",
+      "gaurdianStatus": "Mother",
+      "profilePicture": "url('images/profile-pic-mary.jpg')",
+      "additionalDetails": [
+        {"category": "profession", "answer": "English Teacher", "fieldType": "text"},
+        {"category": "phone", "answer": "123-456-7891", "fieldType": "text"},
+        {"category": "email", "answer": "gaurdian@email.com", "fieldType": "text"},
+        {"category": "address", "answer": "mc2 St", "fieldType": "text"},
+        {"category": "skills", "answer": "dance, baking, programming", "fieldType": "text"},
+        {"category": "language", "answer": "english, spanish", "fieldType": "text"}
+      ]
+    },
+    {
+      "id": 123,
+      "firstName": "James",
+      "lastName": "Jefferson",
+      "gaurdianStatus": "Father",
+      "profilePicture": "",
+      "additionalDetails": [
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"}
+      ]
+    },
+    {
+      "id": 1233,
+      "firstName": "Mandy",
+      "lastName": "Jefferson",
+      "gaurdianStatus": "Brother",
+      "profilePicture": "",
+      "additionalDetails": [
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "phone", "answer": "123-456-7891"},
+        {"category": "email", "answer": "gaurdian@email.com"},
+        {"category": "address", "answer": "mc2 St"},
+        {"category": "skills", "answer": "dance, baking, programming"},
+        {"category": "language", "answer": "english, spanish"}
+      ]
+    }
+  ],
+  "children": [
+    {
+      "id": 1234,
+      "firstName": "Travissss",
+      "lastName": "Jefferson",
+      "profilePicture": "url('images/travis-profile.jpg')",
+      "additionalDetails": [
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"}
+      ]
+    },
+    {
+      "id": 1235,
+      "firstName": "Samara",
+      "lastName": "Jefferson",
+      "profilePicture": "",
+      "additionalDetails": [
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"},
+        {"category": "profession", "answer": "English Teacher"}
+      ]
+    }
+  ]
+}
