@@ -3,27 +3,25 @@ const data = require('../public/mock-data')
 
 const GaurdiansDetail = () => (
   <div id="gaurdianDetails" className="is-hidden" pageItem>
-    {data.guardians.map((gaurdian) => (
+    <div className="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - Mary</div>
+    {data.gaurdians.map((gaurdian) => (
       <div>
         <div className="gaurdianDetails__profile-container">
-          <div className="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - Mary</div>
           <section className="gaurdian-profile">
-            <div className="gaurdian-profile__profile-picture" style="background-image: url('images/profile-pic-mary.jpg')"></div>
+            <div className="gaurdian-profile__profile-picture" style={{backgroundImage: gaurdian.profilePicture}}></div>
             <div className="gaurdian-profile__information">
-              <div className="gaurdian-profile__gaurdian-name">Mary Jefferson</div>
-              <div className="gaurdian-profile__gaurdian-title">Mother</div>
+              <div className="gaurdian-profile__gaurdian-name">{gaurdian.firstName} {gaurdian.lastName}</div>
+              <div className="gaurdian-profile__gaurdian-title">{gaurdian.gaurdianStatus}</div>
             </div>
           </section>
         </div>
         <section className="gaurdianDetails__gaurdian-details">
-          <div className="gaurdian-details__details-row">
-            <div className="gaurdian-details__category">Profession</div>
-            <div className="gaurdian-details__info">English Teacher</div>
-          </div>
-          <div className="gaurdian-details__details-row">
-            <div className="gaurdian-details__category">Profession</div>
-            <div className="gaurdian-details__info">English Teacher</div>
-          </div>
+          {gaurdian.additionalDetails.map((detail) => (
+            <div className="gaurdian-details__details-row">
+              <div className="gaurdian-details__category">{detail.category}</div>
+              <div className="gaurdian-details__info">{detail.answer}</div>
+            </div>
+          ))}
         </section>
       </div>
     ))}
