@@ -29,6 +29,11 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
+        test: /\.sass$/,
+        loaders: ["style-loader", "style", "css-loader", "sass"]
+      },
+      { test: /\.(png|jpg|jpeg|gif|woff)$/, loader: 'url' },
+      {
         test: /\.json$/,
         loader: 'json-loader'
       }

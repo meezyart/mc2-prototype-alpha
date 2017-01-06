@@ -1,3 +1,5 @@
+// styles
+require('../styles/sass/style.sass')
 const React = require('react')
 const ReactDOM = require('react-dom')
 const Landing = require('./Landing')
