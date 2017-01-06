@@ -1,0 +1,62 @@
+// 
+// MC2 Variables
+// 
+
+// COLORS
+// 
+
+// grayscale
+$color-black: #000000
+$color-gray-dark: #444444
+$color-gray-medium: #b1b1b1
+$color-gray-light: #e2e2e2
+$color-gray-pale: #f1f1f1
+$color-white: #ffffff
+
+// red
+$color-red: #d90017
+
+// orange
+$color-orange: #d7aa39
+$color-orange-pale: #f4c655
+
+// green
+$color-green-dark: #35a330
+$color-green-light: #3fc239
+$color-green-pale: #3fc239
+
+// HELPERS
+// 
+@mixin flex() 
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -moz-flex
+  display: -webkit-flex
+  display: flex
+
+@mixin justify-content($value)
+  -webkit-justify-content: $value
+  justify-content: $value
+
+@mixin transform($value)
+  -webkit-transform: $value
+  -ms-transform: $value
+  transform: $value
+
+@mixin animation($value)
+  -webkit-animation: $value
+  animation: $value
+
+@mixin keyframes($animationName)
+  @-webkit-keyframes #{$animationName}
+    @content;
+  
+  @-moz-keyframes #{$animationName}
+    @content;
+  
+  @-o-keyframes #{$animationName}
+    @content;
+  
+  @keyframes #{$animationName}
+    @content;

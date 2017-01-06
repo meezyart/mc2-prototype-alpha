@@ -1,0 +1,54 @@
+// 
+// MC2 Welcome page
+// 
+
+.welcome-banner
+  margin-top: -1px
+  @include flex()
+
+.welcome-container
+  background-color: $color-white
+  padding: 1em
+  &__signing-content
+    padding: 4.5em 0 6em 0
+    display: table
+    margin: 0 auto
+  &__disclaimer
+    color: $color-gray-medium
+    text-align: center
+    font-size: 0.8em
+
+.signing-content
+  &--button
+    background-repeat: no-repeat
+    background-size: contain
+    display: inline-block
+    border-radius: 3px
+    line-height: 2.3em
+    text-align: center
+    font-size: 1.3em
+    height: 2.5em
+    color: white
+    width: 7em
+
+  &__sign-up
+    margin-right: 1em
+    background-image: url("../../public/images/sign-up-bg.jpg")
+
+  &__sign-in
+    margin-left: 1em
+    background-image: url("../../public/images/sign-in-bg.jpg")
+
+.welcome-notification
+  color: $color-green-dark
+  text-align: center
+  font-size: 20px
+
+.welcome-graphic
+  border: 12px solid $color-green-light
+  border-radius: 50%
+  height: 12em
+  margin: auto
+  width: 12em
+  h1
+    line-height: 5em

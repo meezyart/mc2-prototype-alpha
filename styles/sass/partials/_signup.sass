@@ -1,0 +1,70 @@
+// Sign up form styles
+// 
+
+// base form styles
+form
+  transform: translateX(50%)
+  position: relative
+  display: block
+  height: 10em
+  width: 100%
+  left: -50%
+  input
+    border: 1px solid $color-gray-light
+    text-align: left
+    font-size: 0.9em
+    padding: 0.5em
+    width: 78%
+
+.signup-progressbar
+  justify-content: space-between
+  margin: 0 auto 1.7em auto
+  display: flex
+  width: 82%
+  &__steps
+    color: $color-gray-light
+    display: inline-block
+    text-align: center
+    transition: 0.5s
+    width: 48%
+    &:after
+      background-color: $color-orange-pale
+      position: relative
+      transition: 1s
+      display: block
+      content: ""
+      height: 2px
+      top: 0.2em
+      width: 0%
+.activated-step
+  color: $color-orange-pale
+  &:after
+    width: 100%
+
+.form__steps-container
+  transform: translateX(0%)
+  transition: 1s
+  display: flex
+  width: 100%
+
+.form__row-item
+  white-space: nowrap
+  text-align: center
+  min-width: 100%
+  display: inline
+
+.signup-element
+  margin: 0 auto 0.8em auto
+  display: block
+
+.form__submit
+  background-color: $color-orange-pale
+  margin: 1em auto 0 auto
+  color: $color-white
+  padding: 0.7em 0
+  font-size: 1em
+  display: block
+  width: 82%
+  border: 0
+
+
