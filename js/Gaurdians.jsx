@@ -7,7 +7,7 @@ const Gaurdians = () => (
     <div className="page-banner gaurdians-banner"><span></span>gaurdians</div>
     <section className="gaurdian-buttons">
       {data.gaurdians.map((gaurdian) => (
-        <Link to='/gaurdians-detail' params={{ testvalue: 'hello' }} className="gaurdian-buttons__gaurdian-button" key={gaurdian.id} view-path="gaurdianDetails" navbutton>
+        <Link to={`/gaurdians-detail/${gaurdian.id}`} className="gaurdian-buttons__gaurdian-button" key={gaurdian.id} view-path="gaurdianDetails" navbutton>
           <div className="gaurdian-buttons__profile-picture" style={{backgroundImage: gaurdian.profilePicture}}></div>
           <div className="gaurdian-buttons__gaurdian-name">{gaurdian.firstName} {gaurdian.lastName}</div>
           <div className="gaurdian-buttons__gaurdian-title">{gaurdian.gaurdianStatus}</div>

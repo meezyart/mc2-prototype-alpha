@@ -1,10 +1,10 @@
 const React = require('react')
 const data = require('../public/mock-data')
 
-const GaurdiansDetail = () => (
+const GaurdiansDetail = (props) => (
   <div id="gaurdianDetails" className="is-hidden" pageItem>
-    <div className="page-banner gaurdians-detail-page__banner"><span></span>gaurdians - Mary</div>
-    {data.gaurdians.map((gaurdian) => (
+    <div className="page-banner gaurdians-detail-page__banner" data-id={props.params.id}><span></span>gaurdians - Mary</div>
+    {data.gaurdians.filter((gaurdian) => gaurdian.id.toString() === props.params.id).map((gaurdian) => (
       <div>
         <div className="gaurdianDetails__profile-container">
           <section className="gaurdian-profile">
@@ -27,5 +27,9 @@ const GaurdiansDetail = () => (
     ))}
   </div>
 )
+
+GaurdiansDetail.propTypes = {
+  params: React.PropTypes.object
+}
 
 module.exports = GaurdiansDetail

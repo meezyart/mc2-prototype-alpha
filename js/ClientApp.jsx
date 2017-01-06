@@ -12,7 +12,7 @@ const App = () => (
   <Router history={hashHistory}>
     <Route path='/' component={Landing} />
     <Route path='/gaurdians' component={Gaurdians} />
-    <Route path='/gaurdians-detail' name="gaurdians-detail" component={GaurdiansDetail} handler={GaurdiansDetail} />
+    <Route path='/gaurdians-detail/(:id)' component={GaurdiansDetail} />
     <Route path='/search' component={Search} />
   </Router>
 )
