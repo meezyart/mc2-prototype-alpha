@@ -14,7 +14,7 @@
 .gaurdians-banner
   border-color: $color-green-dark
   background-color: $color-green-light
-  span
+  .icon
     background-image: url("../../public/images/gaurdian-banner-icon.png")
     background-size: cover
     display: inline-block
@@ -29,6 +29,7 @@
 .gaurdian-buttons
   margin-top: 3em
   &__gaurdian-button
+    text-decoration: none
     margin-bottom: 3em
     text-align: center
     float: left
@@ -49,7 +50,8 @@
     font-size: 1.3em
     max-width: 6em
   &__gaurdian-title
-    font-weight: bold  
+    color: $color-gray-dark  
+    font-weight: bold
 .add-more
   background-image: url("../../public/images/add-more-icon.png")
   background-color: $color-green-light
