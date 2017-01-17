@@ -2,10 +2,10 @@ const React = require('react')
 const data = require('../public/mock-data')
 
 const GaurdiansDetail = (props) => (
-  <div id="gaurdianDetails" className="is-hidden" pageItem>
-    <div className="page-banner gaurdians-detail-page__banner" data-id={props.params.id}><span></span>gaurdians - Mary</div>
+  <div id="gaurdianDetails">
     {data.gaurdians.filter((gaurdian) => gaurdian.id.toString() === props.params.id).map((gaurdian) => (
       <div>
+        <div className="page-banner gaurdians-detail-page__banner" key={gaurdian.id}><div className="icon"></div> gaurdians - {gaurdian.firstName} </div>
         <div className="gaurdianDetails__profile-container">
           <section className="gaurdian-profile">
             <div className="gaurdian-profile__profile-picture" style={{backgroundImage: gaurdian.profilePicture}}></div>

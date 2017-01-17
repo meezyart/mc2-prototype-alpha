@@ -6,7 +6,7 @@
       "firstName": "Maryyy",
       "lastName": "Jeffersonnnn",
       "gaurdianStatus": "Mother",
-      "profilePicture": "url('images/profile-pic-mary.jpg')",
+      "profilePicture": "url('public/images/profile-pic-mary.jpg')",
       "additionalDetails": [
         {"category": "profession", "answer": "English Teacher", "fieldType": "text"},
         {"category": "phone", "answer": "123-456-7891", "fieldType": "text"},
@@ -51,7 +51,7 @@
       "id": 1234,
       "firstName": "Travissss",
       "lastName": "Jefferson",
-      "profilePicture": "url('images/travis-profile.jpg')",
+      "profilePicture": "url('public/images/travis-profile.jpg')",
       "additionalDetails": [
         {"category": "profession", "answer": "English Teacher"},
         {"category": "profession", "answer": "English Teacher"},

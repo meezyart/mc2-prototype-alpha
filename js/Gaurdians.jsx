@@ -4,7 +4,7 @@ const { Link } = require('react-router')
 
 const Gaurdians = () => (
   <div id="gaurdiansPage" className="is-hidden" pageItem>
-    <div className="page-banner gaurdians-banner"><span></span>gaurdians</div>
+    <div className="page-banner gaurdians-banner"><div className="icon"></div>gaurdians</div>
     <section className="gaurdian-buttons">
       {data.gaurdians.map((gaurdian) => (
         <Link to={`/gaurdians-detail/${gaurdian.id}`} className="gaurdian-buttons__gaurdian-button" key={gaurdian.id} view-path="gaurdianDetails" navbutton>
