@@ -4,8 +4,8 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const Landing = require('./Landing')
 const Search = require('./Search')
-const guardians = require('./guardians')
-const guardiansDetail = require('./guardiansDetail')
+const guardians = require('./Guardians')
+const guardiansDetail = require('./GuardiansDetail')
 const { Router, Route, hashHistory } = require('react-router')
 
 const App = () => (
