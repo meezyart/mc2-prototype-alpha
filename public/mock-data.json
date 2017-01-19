@@ -1,16 +1,16 @@
 {
   "acct-id": 18837736,
-  "gaurdians": [
+  "guardians": [
     {
       "id": 12,
       "firstName": "Maryyy",
       "lastName": "Jeffersonnnn",
-      "gaurdianStatus": "Mother",
+      "guardianStatus": "Mother",
       "profilePicture": "url('public/images/profile-pic-mary.jpg')",
       "additionalDetails": [
         {"category": "profession", "answer": "English Teacher", "fieldType": "text"},
         {"category": "phone", "answer": "123-456-7891", "fieldType": "text"},
-        {"category": "email", "answer": "gaurdian@email.com", "fieldType": "text"},
+        {"category": "email", "answer": "guardian@email.com", "fieldType": "text"},
         {"category": "address", "answer": "mc2 St", "fieldType": "text"},
         {"category": "skills", "answer": "dance, baking, programming", "fieldType": "text"},
         {"category": "language", "answer": "english, spanish", "fieldType": "text"}
@@ -20,7 +20,7 @@
       "id": 123,
       "firstName": "James",
       "lastName": "Jefferson",
-      "gaurdianStatus": "Father",
+      "guardianStatus": "Father",
       "profilePicture": "",
       "additionalDetails": [
         {"category": "profession", "answer": "English Teacher"},
@@ -34,12 +34,12 @@
       "id": 1233,
       "firstName": "Mandy",
       "lastName": "Jefferson",
-      "gaurdianStatus": "Brother",
+      "guardianStatus": "Brother",
       "profilePicture": "",
       "additionalDetails": [
         {"category": "profession", "answer": "English Teacher"},
         {"category": "phone", "answer": "123-456-7891"},
-        {"category": "email", "answer": "gaurdian@email.com"},
+        {"category": "email", "answer": "guardian@email.com"},
         {"category": "address", "answer": "mc2 St"},
         {"category": "skills", "answer": "dance, baking, programming"},
         {"category": "language", "answer": "english, spanish"}

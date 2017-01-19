@@ -4,15 +4,15 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const Landing = require('./Landing')
 const Search = require('./Search')
-const Gaurdians = require('./Gaurdians')
-const GaurdiansDetail = require('./GaurdiansDetail')
+const guardians = require('./guardians')
+const guardiansDetail = require('./guardiansDetail')
 const { Router, Route, hashHistory } = require('react-router')
 
 const App = () => (
   <Router history={hashHistory}>
     <Route path='/' component={Landing} />
-    <Route path='/gaurdians' component={Gaurdians} />
-    <Route path='/gaurdians-detail/(:id)' component={GaurdiansDetail} />
+    <Route path='/guardians' component={guardians} />
+    <Route path='/guardians-detail/(:id)' component={guardiansDetail} />
     <Route path='/search' component={Search} />
   </Router>
 )
