@@ -18,9 +18,9 @@ const guardiansDetail = (props) => (
                 <div className="guardian-profile__guardian-title">{guardian.guardianStatus}</div>
               </div>
             </section>
-            <Link to={`/guardians-detail-edit/${guardian.id}`} className="guardian-profile__edit" user-id="${data.id}">
-              <span className="button">Edit</span>
-            </Link>
+            <div className="guardian-profile__edit" user-id="${data.id}">
+              <Link to={`/guardians-detail-edit/${guardian.id}`} className="button">Edit</Link>
+            </div>
           </div>
           <section className="guardian-details__guardian-details">
             {guardian.additionalDetails.map((detail) => (

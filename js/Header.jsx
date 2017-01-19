@@ -1,16 +1,16 @@
 const React = require('react')
+const { Link } = require('react-router')
 
 class Header extends React.Component {
-
   render () {
     return (
       <div className="header">
 
         <div className="header__logo header--button"><img src="public/images/logo.jpg" /></div>
 
-        <div className="header__home-btn header--button" view-path="profilePage" headerbutton>
+        <Link to="/" className="header__home-btn header--button" view-path="profilePage" headerbutton>
           <img src="public/images/home-btn.jpg" />
-        </div>
+        </Link>
 
         <div className="header__friends-btn header--button">
           <img src="public/images/friends-btn.jpg" />
