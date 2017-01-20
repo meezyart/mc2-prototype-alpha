@@ -1,18 +1,16 @@
 const React = require('react')
 const data = require('../public/mock-data')
 const Header = require('./Header')
+const Backbutton = require('./Backbutton')
 const { Link } = require('react-router')
 
 class Guardians extends React.Component {
-  prevPage () {
-    window.history.back()
-  }
   render () {
     return (
       <div>
         <Header />
         <div id="guardians-page">
-          <div className="page-banner guardians-banner"><span onClick={this.prevPage}>BACK</span><div className="icon"></div>guardians</div>
+          <div className="page-banner guardians-banner"><Backbutton /><div className="icon"></div>guardians</div>
           <section className="guardian-buttons">
             {data.guardians.map((guardian) => (
               <Link to={`/guardians-detail/${guardian.id}`} className="guardian-buttons__guardian-button" key={guardian.id}>

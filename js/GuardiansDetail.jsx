@@ -1,6 +1,7 @@
 const React = require('react')
 const data = require('../public/mock-data')
 const Header = require('./Header')
+const Backbutton = require('./Backbutton')
 const { Link } = require('react-router')
 
 const guardiansDetail = (props) => (
@@ -9,7 +10,9 @@ const guardiansDetail = (props) => (
     <div id="guardian-details">
       {data.guardians.filter((guardian) => guardian.id.toString() === props.params.id).map((guardian) => (
         <div>
-          <div className="page-banner guardians-detail-page__banner" key={guardian.id}><div className="icon"></div> guardians - {guardian.firstName} </div>
+          <div className="page-banner guardians-detail-page__banner" key={guardian.id}>
+            <Backbutton /><div className="icon"></div>guardians - {guardian.firstName}
+          </div>
           <div className="guardian-details__profile-container">
             <section className="guardian-profile">
               <div className="guardian-profile__profile-picture" style={{backgroundImage: guardian.profilePicture}}></div>

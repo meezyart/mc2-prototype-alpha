@@ -1,5 +1,5 @@
 {
-  "acct-id": 18837736,
+  "acct-id": 1884564654,
   "guardians": [
     {
       "id": 12,
@@ -9,7 +9,7 @@
       "profilePicture": "url('public/images/profile-pic-mary.jpg')",
       "additionalDetails": [
         {"category": "profession", "answer": "English Teacher", "fieldType": "text"},
-        {"category": "phone", "answer": "123-456-7891", "fieldType": "text"},
+        {"category": "phone", "answer": "123-456-7891", "fieldType": "number"},
         {"category": "email", "answer": "guardian@email.com", "fieldType": "text"},
         {"category": "address", "answer": "mc2 St", "fieldType": "text"},
         {"category": "skills", "answer": "dance, baking, programming", "fieldType": "text"},
