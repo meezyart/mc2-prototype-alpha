@@ -13,16 +13,16 @@ const guardiansDetailEdit = (props) => (
             <Backbutton /><div className="icon"></div>guardians - {guardian.firstName}
           </div>
           <section className="guardian-profile">
-            <div className="guardian-profile__profile-picture" style={{backgroundImage: data.profilePicture}}></div>
+            <div className="guardian-profile__profile-picture" style={{backgroundImage: guardian.profilePicture}}></div>
             <div className="guardian-profile__information">
-              <div className="guardian-profile__guardian-name">{data.firstName} {data.lastName}</div>
-              <div className="guardian-profile__guardian-title">{data.guardianStatus}</div>
+              <div className="guardian-profile__guardian-name">{guardian.firstName} {guardian.lastName}</div>
+              <div className="guardian-profile__guardian-title">{guardian.guardianStatus}</div>
             </div>
           </section>
-          <div className="guardian-profile__edit" user-id={data.id}>
+          <div className="guardian-profile__edit" user-id={guardian.id}>
             <span className="editing">Editing</span>
-            <span className="button button--save" user-id={data.id} view-path="guardianDetails" navbutton>Save</span>
-            <span className="button button--cancel" user-id={data.id} view-path="guardianDetails" navbutton>Cancel</span>
+            <span className="button button--save" user-id={guardian.id} view-path="guardianDetails" navbutton>Save</span>
+            <span className="button button--cancel" user-id={guardian.id} view-path="guardianDetails" navbutton>Cancel</span>
           </div>
           <section className="guardianDetailsEdit__guardian-details">
             {guardian.additionalDetails.map((detail) => (
