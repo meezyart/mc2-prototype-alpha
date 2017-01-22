@@ -20,7 +20,6 @@ class Guardians extends React.Component {
       .then(res => {
         // Transform the raw data by extracting the nested posts
         const posts = res.data
-        console.log(posts)
 
         // Update state to trigger a re-render.
         // Clear any errors, and turn off the loading indiciator.
