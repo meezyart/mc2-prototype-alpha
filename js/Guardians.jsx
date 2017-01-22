@@ -15,13 +15,13 @@ class Guardians extends React.Component {
       error: null
     }
   }
-  componentDidMount() {
+  componentWillMount() {
     // Remove the 'www.' to cause a CORS error (and see the error state)
     axios.get(`http://mycommunityclassroom.herokuapp.com/api/v1/user/583d2be3330b4500660b78e2/details`)
       .then(res => {
         // Transform the raw data by extracting the nested posts
-        console.log(res)
-        const posts = res.data.data.children.map(obj => obj.data)
+        const posts = res.data
+        console.log(posts)
 
         // Update state to trigger a re-render.
         // Clear any errors, and turn off the loading indiciator.
@@ -51,12 +51,21 @@ class Guardians extends React.Component {
     if (this.state.error) {
       return this.renderError()
     }
+    var obj = {a:1, b:2, c:3}
+    
+    for (var prop in obj) {
+      console.log('obj.' + prop, '=', obj[prop])
+    }
 
+    var outPut = []
+
+    for (let item in this.state.posts){
+      let value = this.state.posts[item] 
+      outPut.push(<li>{`${item} ${value}`}</li>)
+    }
     return (
       <ul>
-        {this.state.posts.map(post =>
-          <li key={post.id}>{post.title}</li>
-        )}
+        {outPut}
       </ul>
     )
   }
